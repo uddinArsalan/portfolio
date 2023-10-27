@@ -25,7 +25,7 @@ const GET_USER_BLOGS = gql`{
 
 const Blogs = () => {
   // const [articles,setArticles] = useState<blogTypes[]>([])
-  const { loading, error, data } = useQuery(GET_USER_BLOGS);
+  const { loading, data } = useQuery(GET_USER_BLOGS);
   // const articles = data.user.publication.posts
   // useEffect(() => {
     //   if(data)

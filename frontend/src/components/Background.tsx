@@ -1,14 +1,7 @@
 import bgImg from "../assets/video.mp4";
-// import { useState, useEffect } from "react";
-// import { useMediaQuery } from "react-responsive";
 import { Link } from "react-scroll";
 
-interface NavbarProp {
-  showNav: boolean;
-  setShowNav: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-const Background = ({ setShowNav }: NavbarProp) => {
+const Background = () => {
 
   //bg-[#151515]
   return (

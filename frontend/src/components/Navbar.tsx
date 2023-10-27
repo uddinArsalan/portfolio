@@ -1,7 +1,7 @@
 import portfolio from "../assets/Profile.png";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link} from "react-scroll";
 
 interface NavbarProp {
   showNav: boolean;
