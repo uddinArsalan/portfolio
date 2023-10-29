@@ -6,20 +6,15 @@ import ProjectSection from "./ProjectSection";
 import Skills from "./Skills";
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
-interface NavbarProp {
-  showNav: boolean
-  setShowNav: React.Dispatch<React.SetStateAction<boolean>>
-}
-
 const client = new ApolloClient({
-  uri: 'http://localhost:4000/',
+  uri: 'https://apollo-server-12hj.onrender.com',
   cache: new InMemoryCache(),
 });
 
-const Main = ({ showNav, setShowNav }: NavbarProp) => {
+const Main = () => {
   return (
     <div className="flex flex-col md:col-span-3">
-      <Background showNav={showNav} setShowNav={setShowNav} />
+      <Background />
       <About />
       <ProjectSection />
       <ApolloProvider client={client}>

@@ -31,7 +31,7 @@ const Navbar = ({ showNav, setShowNav }: NavbarProp) => {
         ></i>
       )}
       {showNav ? (
-        <div className="bg-[#151515] font-semibold text-2xl text-[#bebebe] grid grid-rows-6 place-items-center p-10 cursor-pointer h-screen md:sticky top-0 bottom-0 left-0 z-20">
+        <div className="bg-[#151515] font-semibold text-2xl text-[#bebebe] grid grid-rows-6 place-items-center p-10 cursor-pointer h-screen md:sticky top-0 bottom-0 left-0">
           <div className="flex justify-center items-center">
             <img
               src={portfolio}

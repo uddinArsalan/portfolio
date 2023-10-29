@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'hero': "url('./assets/background.mp4')",
+        'video': "url('../public/assets/video.mp4')",
       },
     },
   },

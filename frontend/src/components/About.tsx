@@ -2,8 +2,8 @@ import profile from "../assets/Profile.png";
 
 const About = () => {
   return (
-    <div className="text-white bg-black flex flex-col justify-center items-center gap-10 p-12" id="about">
-      <div className="text-[#88ce02] text-5xl font-bold italic">About Me</div>
+    <div className="text-white bg-black flex flex-col justify-center items-center gap-10 md:p-12 p-6" id="about">
+      <div className="text-[#88ce02] text-5xl font-bold italic text-center">About Me</div>
       <img src={profile} alt="" className="w-48 h-48 rounded-md bg-blue-900" />
       <div className="text-5xl text-white font-mono line-through">Hello my name is <span className="text-pink-700">Arsalan</span></div>
       <div className="p-2 md:p-12 font-serif m-2 text-lg">**About Me: Crafting Digital Experiences**

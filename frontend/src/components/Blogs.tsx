@@ -36,7 +36,7 @@ const Blogs = () => {
   // console.log(data.user.publication.posts)
   console.log(articles)
   return (
-    <div className='bg-black grid p-16 gap-8 place-items-center' id='blogs'>
+    <div className='bg-black grid md:p-16 p-8 gap-8 place-items-center' id='blogs'>
       <div className='text-[rgb(136,206,2)] text-4xl font-bold'>BLOGS..</div>
       {articles && articles.map((article : blogTypes) => (
         <div key={article.title} className='bg-gray-900 text-black p-6 flex flex-col gap-8'>

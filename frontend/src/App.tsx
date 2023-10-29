@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="grid md:grid-cols-4">
       <Navbar showNav={showNav} setShowNav={setShowNav}/>
-      <Main showNav={showNav} setShowNav={setShowNav}/>
+      <Main />
     </div>
   );
 }
