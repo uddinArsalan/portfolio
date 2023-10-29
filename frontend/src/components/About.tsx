@@ -1,11 +1,15 @@
 import profile from "../assets/Profile.png";
+import Text from "./Text";
 
 const About = () => {
   return (
     <div className="text-white bg-black flex flex-col justify-center items-center gap-10 md:p-12 p-6" id="about">
       <div className="text-[#88ce02] text-5xl font-bold italic text-center">About Me</div>
       <img src={profile} alt="" className="w-48 h-48 rounded-md bg-blue-900" />
-      <div className="text-5xl text-white font-mono line-through">Hello my name is <span className="text-pink-700">Arsalan</span></div>
+      <div>
+      <Text className="text-5xl text-white font-mono" text="Hello My Name is " delay={100} />
+      <span className="text-pink-700 font-bold text-5xl">ARSALAN</span>
+      </div>
       <div className="p-2 md:p-12 font-serif m-2 text-lg">**About Me: Crafting Digital Experiences**
 
         Hi there, I'm Arsalan, a frontend developer who's all about making the web a more exciting place. I don't just build websites; I create online worlds that capture the imagination.

@@ -22,10 +22,10 @@ const Background = () => {
               Get Started
             </Link>
           </div>
-          <div className="flex gap-8 text-gray-500 text-5xl cursor-pointer">
-            <a href="https://twitter.com/Arsalan_0101" target="_blank"><i className="fa-brands fa-square-x-twitter text-white"></i></a>
-            <a href="https://github.com/uddinArsalan" target="_blank"><i className="fa-brands fa-github text-gray-500"></i></a>
-            <a href="https://www.linkedin.com/in/arsalan-uddin-2356b81b9" target="_blank"><i className="fa-brands fa-linkedin text-blue-800"></i></a>
+          <div className="flex gap-8 text-5xl cursor-pointer">
+            <a href="https://twitter.com/Arsalan_0101" target="_blank"><i className="fa-brands fa-square-x-twitter text-green-500"></i></a>
+            <a href="https://github.com/uddinArsalan" target="_blank"><i className="fa-brands fa-github text-yellow-500"></i></a>
+            <a href="https://www.linkedin.com/in/arsalan-uddin-2356b81b9" target="_blank"><i className="fa-brands fa-linkedin text-red-500"></i></a>
           </div>
         </div>
         <video
