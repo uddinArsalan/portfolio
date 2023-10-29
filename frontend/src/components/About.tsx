@@ -1,47 +1,45 @@
 import profile from "../assets/Profile.png";
+import { Link } from "react-scroll";
 import Text from "./Text";
 
 const About = () => {
   return (
-    <div className="text-white bg-black flex flex-col justify-center items-center gap-10 md:p-12 p-6" id="about">
-      <div className="text-[#88ce02] text-5xl font-bold italic text-center">About Me</div>
+    <div className="text-white bg-black flex flex-col justify-center items-center gap-10 md:p-12 p-6 w-full" id="about">
+      <div className="text-[#88ce02] text-5xl font-bold flex justify-center items-center w-full">About Me</div>
       <img src={profile} alt="" className="w-48 h-48 rounded-md bg-blue-900" />
       <div>
-      <Text className="text-5xl text-white font-mono" text="Hello My Name is " delay={100} />
-      <span className="text-pink-700 font-bold text-5xl">ARSALAN</span>
+        <Text className="md:text-5xl text-3xl text-white font-mono" text="Hello My Name is " delay={100} />
+        <span className="text-pink-700 font-bold text-3xl md:text-5xl">ARSALAN</span>
       </div>
-      <div className="p-2 md:p-12 font-serif m-2 text-lg">**About Me: Crafting Digital Experiences**
-
-        Hi there, I'm Arsalan, a frontend developer who's all about making the web a more exciting place. I don't just build websites; I create online worlds that capture the imagination.
-
-        **A Digital Artist at Heart**
-
-        To me, coding is like painting a picture, and each line of code adds a new color. I studied Computer Science at [Your University], and that's where my journey began to blend art with technology.
-
-        **Beyond the Screen**
-
-        When I'm not coding, you might catch me exploring diverse worlds – from watching anime of different genres to gazing at the stars, diving deep into the fascinating realms of astronomy, math, and physics. I'm all about pushing boundaries and embracing the unknown.
-
-        **My Toolkit**
-
-        - **HTML, CSS, JavaScript**: My trusty tools.
-        - **React, Vue, Angular**: For crafting dynamic web experiences.
-        - **Motion Magic**: I bring websites to life.
-        - **UX Crafting**: I turn complexity into simplicity.
-        - **Coffee Lover**: My endless source of energy.
-
-        **Chasing Excellence**
-
-        My journey as a frontend developer is all about chasing excellence. I don't stop at launching; I'm obsessed with making every project the best it can be.
-
-        **What's Next?**
-
-        The digital world is vast, and there are still uncharted territories to explore. I'm always on the lookout for new challenges, epic adventures, and opportunities to collaborate. Ready to embark on a journey together? Let's [Connect](#contact).
-
-        Welcome to my digital space; I hope you enjoy the magic of my creations.
+      <div className="p-2 md:p-12 font-serif text-lg flex flex-col gap-6">
+        <div>Hi, I'm Arsalan, a passionate frontend developer dedicated to creating immersive digital experiences through clean, efficient code and stunning design.</div>
+        <div className="flex flex-col">
+          <div className="font-bold text-2xl text-[rgb(136,206,2)]">My Journey</div>
+          <div>I embarked on my journey in the world of web development [X years] ago, driven by an insatiable curiosity and a desire to create captivating user interfaces. Throughout my career, I've honed my skills in technologies like CSS, JavaScript,React, Typescript etc. and have actively kept pace with the evolving tech landscape.</div>
+        </div>
+        <div>
+          <div className="font-bold text-2xl text-[rgb(136,206,2)]">What I Do</div>
+          <div>I specialize in crafting responsive, user-friendly web applications and pixel-perfect designs. Whether it's building interactive websites, optimizing UI/UX, or delving into the intricacies of frontend architecture, I'm dedicated to delivering top-notch solutions.</div>
+        </div>
+        <div>
+          <div className="font-bold text-2xl text-[rgb(136,206,2)]">What Sets Me Apart</div>
+          <div>My approach combines a keen eye for aesthetics with a deep understanding of the tech stack, allowing me to bridge the gap between creativity and functionality. I thrive on challenges and love turning innovative ideas into reality.</div>
+        </div>
+        <div>
+          <div className="font-bold text-2xl text-[rgb(136,206,2)]">Let's Connect <span><Link
+            activeClass="active"
+            to="contact"
+            spy={true}
+            smooth={true}
+            duration={1000}
+          >
+            <i className="fa-solid fa-circle-down text-[rgb(136,206,2)] text-2xl cursor-pointer"></i>
+          </Link></span></div>
+          <div>I'm passionate about collaborating on exciting projects and creating remarkable digital experiences. Feel free to reach out for any potential opportunities, collaborations, or just a chat about anything frontend-related.</div>
+        </div>
       </div>
-      </div>
-      
+    </div>
+
   )
 }
 
