@@ -3,7 +3,7 @@ import svgs from "../../public/assets/skills svgs/"
 
 const Skills = () => {
     return (
-        <div className="bg-gray-900 bg-[url('../../public/assets/skillbg2.jpg')] bg-center bg-no-repeat bg-cover flex flex-col p-12 justify-center items-center gap-12">
+        <div className="bg-gray-900 bg-hero bg-center bg-no-repeat bg-cover flex flex-col p-12 justify-center items-center gap-12">
             <div className="text-[rgb(136,206,2)] text-5xl font-bold">My Skills</div>
             <div className="grid grid-cols-3 place-content-center gap-y-8 gap-8 items-center  p-8 object-contain">
                 <div className="">
