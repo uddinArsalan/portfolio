@@ -13,7 +13,7 @@ const client = new ApolloClient({
 
 const Main = () => {
   return (
-    <div className="flex flex-col md:col-span-3">
+    <div className="flex flex-col md:col-span-3 col-span-4 md:static absolute top-0 -z-10 md:z-20 ">
       <Background />
       <About />
       <ProjectSection />

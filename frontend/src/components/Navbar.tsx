@@ -18,6 +18,7 @@ const Navbar = ({ showNav, setShowNav }: NavbarProp) => {
       setShowNav(true);
       setShowBar(false);
     } else {
+      setShowNav(false);
       setShowBar(true);
     }
   }, [isDesktopOrLaptop]);
@@ -26,24 +27,25 @@ const Navbar = ({ showNav, setShowNav }: NavbarProp) => {
     <>
       {showBar && (
         <i
-          className="fa-solid fa-bars absolute top-0 pt-12 pl-6 text-white text-5xl font-light cursor-pointer z-40"
+          className="fa-solid fa-bars absolute top-0 pt-12 pl-6 text-white text-2xl font-light cursor-pointer z-40"
           onClick={() => setShowNav((prev: boolean) => !prev)}
         ></i>
       )}
       {showNav ? (
-        <div className="bg-[#151515] font-semibold text-2xl text-[#bebebe] grid grid-rows-6 place-items-center p-10 cursor-pointer h-screen md:sticky top-0 bottom-0 left-0">
+        <div className="bg-[#151515] font-semibold text-2xl text-[#bebebe] grid grid-rows-6 place-items-center p-10 cursor-pointer h-screen md:sticky md:top-0 md:bottom-0 md:left-0 w-full md:col-span-1 col-span-2 
+        navTransition opacity-100">
           <div className="flex justify-center items-center">
             <img
               src={portfolio}
               alt=""
-              className="rounded-full border-none w-32 p-0 flex"
+              className="rounded-full border-none w-24 md:w-32 p-0 flex"
             />
           </div>
           <div className="text-[rgb(136,206,2)] text-4xl mt-8 font-bold">
             ARSALAN
           </div>
           {/* <div className="text-[#989494] ">Home</div> */}
-          <div className="items-end">
+          <div className="md:marker:items-end">
             <Link
               activeClass="active"
               to="about"
@@ -55,7 +57,7 @@ const Navbar = ({ showNav, setShowNav }: NavbarProp) => {
               About
             </Link>
           </div>
-          <div className="items-end">
+          <div className="md:items-end">
           <Link
               activeClass="active"
               to="projects"
@@ -67,7 +69,7 @@ const Navbar = ({ showNav, setShowNav }: NavbarProp) => {
               Projects
             </Link>
           </div>
-          <div className="items-end">
+          <div className="md:items-end">
           <Link
               activeClass="active"
               to="blogs"
@@ -79,7 +81,7 @@ const Navbar = ({ showNav, setShowNav }: NavbarProp) => {
               Blogs
             </Link>
           </div>
-          <div className="items-end">
+          <div className="md:items-end">
           <Link
               activeClass="active"
               to="contact"

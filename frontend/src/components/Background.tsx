@@ -1,5 +1,6 @@
 import bgImg from "../../public/assets/video.mp4";
 import { Link } from "react-scroll";
+// font-bold text-5xl bg-green-700 text-center p-4 rounded-xl
 
 const Background = () => {
 
@@ -9,7 +10,7 @@ const Background = () => {
       <header className="relative flex justify-center items-center text-white h-screen ">
         <div className="absolute grid grid-row-3 gap-y-8 place-items-center place-content-center justify-center z-20
            ">
-          <div className="font-bold text-6xl text-blue-700 text-center">WELCOME TO MY PORTFOLIO</div>
+          <div className="">WELCOME TO MY PORTFOLIO</div>
           <div className="bg-green-400 text-black font-semibold text-sm pt-2 pr-3 pb-2 pl-3 rounded-md w-32 flex justify-center items-center cursor-pointer">
             <Link
               activeClass="active"
@@ -33,6 +34,7 @@ const Background = () => {
           loop
           muted
           className="cursor-pointer object-cover h-full"
+          preload="none"
         >
           <source src={bgImg} type="video/mp4" className="" />
           Your browser does not support the video tag.

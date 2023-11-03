@@ -4,9 +4,9 @@ import "./index.css";
 import { useState } from "react";
 
 function App() {
-  const [showNav,setShowNav] = useState<boolean>(false)
+  const [showNav,setShowNav] = useState<boolean>(false);
   return (
-    <div className="grid md:grid-cols-4">
+    <div className="grid grid-cols-4">
       <Navbar showNav={showNav} setShowNav={setShowNav}/>
       <Main />
     </div>

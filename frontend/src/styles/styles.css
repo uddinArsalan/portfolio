@@ -42,3 +42,10 @@
   /* font-family: 'Alegreya', serif; */
   font-family: 'Quicksand', sans-serif;
 }
+
+.navTransition{
+  transition-property: opacity;
+  transition-duration: 100s;
+  transition-timing-function: ease-in-out;
+  transform-origin: top;
+}
