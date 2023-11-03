@@ -64,13 +64,10 @@ const Contacts = () => {
                 errors={state.errors}
               />
             </div>
-            <div className="flex items-center justify-around w-3/5">
               <ReCAPTCHA
                 sitekey="6LcnBu4oAAAAAJT2zNV3pVHXKIlL6haBuBE1h0sm"
-                className="border-2 border-white items-start"
+                className="items-start"
               />
-              <div className="text-[rgb(136,206,2)] text-lg font-bold">I am not a robot</div>
-            </div>
             {/* <div className="g-recaptcha bg-white" data-sitekey="6LcnBu4oAAAAAJT2zNV3pVHXKIlL6haBuBE1h0sm">Hi Load Recaptcha</div> */}
             <button
               className="bg-[rgb(136,206,2)] rounded-md text-3xl font-bold"
