@@ -54,3 +54,7 @@
   backdrop-filter: blur(8px); /* Add blur effect */
   background: rgba(0, 0, 0, 0.5); /* Set background opacity */
 }
+
+.submit-form:disabled{
+  background: rgb(181, 190, 181);
+}

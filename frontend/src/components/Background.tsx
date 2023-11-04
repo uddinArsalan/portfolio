@@ -1,5 +1,6 @@
 import bgImg from "../../public/assets/video.mp4";
 import { Link } from "react-scroll";
+import Text from "./Text";
 // font-bold text-5xl bg-green-700 text-center p-4 rounded-xl
 
 const Background = () => {
@@ -10,7 +11,8 @@ const Background = () => {
       <header className="relative flex justify-center items-center text-white h-screen ">
         <div className="absolute grid grid-row-3 gap-y-8 place-items-center place-content-center justify-center z-20
            ">
-          <div className="">WELCOME TO MY PORTFOLIO</div>
+            <Text className="text-[rgb(136,206,2)] font-extrabold text-4xl md:text-6xl md:m-0 m-10 flex justify-center items-center text-center" text="WELCOME TO MY PORTFOLIO" delay={200} />
+          {/* <div className=""></div> */}
           <div className="bg-green-400 text-black font-semibold text-sm pt-2 pr-3 pb-2 pl-3 rounded-md w-32 flex justify-center items-center cursor-pointer">
             <Link
               activeClass="active"

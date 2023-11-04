@@ -1,5 +1,5 @@
 import ReCAPTCHA from "react-google-recaptcha";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm, ValidationError } from '@formspree/react';
 import Modal from './Modal';
 const Contacts = () => {
@@ -9,18 +9,21 @@ const Contacts = () => {
   //   id="contact">Thanks for joining!</p>;
   // }
   //flex-col gap-8 md:gap-16 p-8 md:p-12
-  const [open, setOpen] = useState<boolean>(true);
+  const [open, setOpen] = useState<boolean>(false);
+  useEffect(() => {
+    if(state.succeeded) setOpen(true)
+  },[state.succeeded])
 
   const closeModal = () => {
     setOpen(prev => !prev)
   }
   return (
     <>
-        <div className={open || state.succeeded ? 'relative top-60' : 'hidden'}>
+        <div className={open ? 'relative top-60' : 'hidden'}>
           <Modal closeModal={closeModal} />
         </div>
       <div
-        className={`${open ? 'bg-gray-900 bg-opacity-50 blur-sm' : ''} ${"flex justify-center items-center md:gap-16 flex-col gap-8 bg-black p-8 md:p-12"} `}
+        className={`${(open) ? 'bg-gray-900 bg-opacity-50 blur-sm' : ''} ${"flex justify-center items-center md:gap-16 flex-col gap-8 bg-black p-8 md:p-12"} `}
         id="contact"
       >
         <div className="text-[rgb(136,206,2)] text-5xl font-bold">Contact Us</div>
@@ -35,7 +38,7 @@ const Contacts = () => {
             >
               Name
             </label>
-            <input id="name" type="text" name="name" className="p-8 w-full" placeholder='Enter your name' />
+            <input id="name" type="text" name="name" className="p-8 w-full" placeholder='Enter your name' disabled={open}/>
             <ValidationError
               prefix="Name"
               field="name"
@@ -49,7 +52,7 @@ const Contacts = () => {
             >
               Email
             </label>
-            <input id="email" type="email" name="email" className="p-8 w-full" placeholder='Enter your email' />
+            <input id="email" type="email" name="email" className="p-8 w-full" placeholder='Enter your email' disabled={open}/>
             <ValidationError
               prefix="Email"
               field="email"
@@ -64,7 +67,7 @@ const Contacts = () => {
               Project Idea
             </label>
             <textarea id="message"
-              name="message" className="p-8 w-full" placeholder='Enter your message here' />
+              name="message" className="p-8 w-full" placeholder='Enter your message here' disabled={open}/>
             <ValidationError
               prefix="Message"
               field="message"
@@ -77,8 +80,8 @@ const Contacts = () => {
           />
           {/* <div className="g-recaptcha bg-white" data-sitekey="6LcnBu4oAAAAAJT2zNV3pVHXKIlL6haBuBE1h0sm">Hi Load Recaptcha</div>  */}
           <button
-            className="bg-[rgb(136,206,2)] rounded-md text-3xl font-bold"
-            type="submit" disabled={state.submitting}
+            className="bg-[rgb(136,206,2)] rounded-md text-3xl font-bold submit-form"
+            type="submit" disabled={state.submitting || open}
           >
             Submit
           </button>
