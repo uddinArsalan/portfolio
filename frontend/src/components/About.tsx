@@ -15,7 +15,7 @@ const About = () => {
         <div>Hi, I'm Arsalan, a passionate frontend developer dedicated to creating immersive digital experiences through clean, efficient code and stunning design.</div>
         <div className="flex flex-col">
           <div className="font-bold text-2xl text-[rgb(136,206,2)]">My Journey</div>
-          <div>I embarked on my journey in the world of web development [X years] ago, driven by an insatiable curiosity and a desire to create captivating user interfaces. Throughout my career, I've honed my skills in technologies like CSS, JavaScript,React, Typescript etc. and have actively kept pace with the evolving tech landscape.</div>
+          <div>I embarked on my journey in the world of web development 2 ago, driven by an insatiable curiosity and a desire to create captivating user interfaces. Throughout my career, I've honed my skills in technologies like CSS, JavaScript,React, Typescript etc. and have actively kept pace with the evolving tech landscape.</div>
         </div>
         <div>
           <div className="font-bold text-2xl text-[rgb(136,206,2)]">What I Do</div>
