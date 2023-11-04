@@ -49,3 +49,8 @@
   transition-timing-function: ease-in-out;
   transform-origin: top;
 }
+
+.modal-background {
+  backdrop-filter: blur(8px); /* Add blur effect */
+  background: rgba(0, 0, 0, 0.5); /* Set background opacity */
+}
