@@ -1,6 +1,6 @@
 import bgImg from "../../public/assets/video.mp4";
 import { Link } from "react-scroll";
-import Text from "./Text";
+import { RoughNotation } from "react-rough-notation";
 // font-bold text-5xl bg-green-700 text-center p-4 rounded-xl
 
 const Background = () => {
@@ -8,10 +8,12 @@ const Background = () => {
   //bg-[#151515]
   return (
     <>
-      <header className="relative flex justify-center items-center text-white h-screen bg-hero bg-center bg-no-repeat bg-cover">
+      <header className="relative flex justify-center items-center text-white h-screen">
         <div className="absolute grid grid-row-3 gap-y-8 place-items-center place-content-center justify-center z-20
            ">
-            <Text className="text-blue-700 font-extrabold text-6xl md:m-0 m-10 flex justify-center items-center text-center" text="WELCOME TO MY PORTFOLIO" delay={200} />
+          <RoughNotation type="highlight" animationDelay={100} animationDuration={1000} color={"green"} show={true}>
+            <div className="text-white font-extrabold text-6xl md:m-0 m-10 flex justify-center items-center text-center p-2">Welcome To My Portfolio</div>
+          </RoughNotation>
           {/* <div className=""></div> */}
           <div className="bg-green-400 text-black font-semibold text-sm pt-2 pr-3 pb-2 pl-3 rounded-md w-32 flex justify-center items-center cursor-pointer">
             <Link
