@@ -8,10 +8,10 @@ const Background = () => {
   //bg-[#151515]
   return (
     <>
-      <header className="relative flex justify-center items-center text-white h-screen ">
+      <header className="relative flex justify-center items-center text-white h-screen bg-hero bg-center bg-no-repeat">
         <div className="absolute grid grid-row-3 gap-y-8 place-items-center place-content-center justify-center z-20
            ">
-            <Text className="text-green-500 font-extrabold text-5xl md:text-6xl md:m-0 m-10 flex justify-center items-center text-center" text="WELCOME TO MY PORTFOLIO" delay={200} />
+            <Text className="text-blue-700 font-extrabold text-5xl md:text-6xl md:m-0 m-10 flex justify-center items-center text-center" text="WELCOME TO MY PORTFOLIO" delay={200} />
           {/* <div className=""></div> */}
           <div className="bg-green-400 text-black font-semibold text-sm pt-2 pr-3 pb-2 pl-3 rounded-md w-32 flex justify-center items-center cursor-pointer">
             <Link
