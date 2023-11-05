@@ -10,7 +10,7 @@ interface NavbarProp {
 
 const Navbar = ({ showNav, setShowNav }: NavbarProp) => {
   const isDesktopOrLaptop = useMediaQuery({
-    query: "(min-width: 768px)",
+    query: "(min-width: 1024px)",
   });
   const [showBar, setShowBar] = useState(false);
   useEffect(() => {
@@ -32,7 +32,7 @@ const Navbar = ({ showNav, setShowNav }: NavbarProp) => {
         ></i>
       )}
       {showNav ? (
-        <div className="bg-[#151515] font-semibold text-2xl text-[#bebebe] grid grid-rows-6 place-items-center p-10 cursor-pointer h-screen md:sticky md:top-0 md:bottom-0 md:left-0 w-full md:col-span-1 col-span-2 
+        <div className="bg-[#151515] font-semibold text-2xl text-[#bebebe] grid grid-rows-6 place-items-center p-10 cursor-pointer h-screen lg:sticky lg:top-0 lg:bottom-0 lg:left-0 w-full lg:col-span-1 col-span-2 
         navTransition opacity-100">
           <div className="flex justify-center items-center">
             <img

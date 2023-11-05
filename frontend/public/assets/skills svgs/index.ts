@@ -10,14 +10,14 @@ import tailwindcss_svg from "./tailwindcss-icon.svg"
 import html_svg from "./html-5.svg"
 
 export default {
-    bootsrap_svg,
     react_svg,
-    css_svg,
+    javascript_svg,
+    typescript_svg,
+    graphql_svg,
+    bootsrap_svg,
+    tailwindcss_svg,
     node_svg,
     firebase_svg,
-    tailwindcss_svg,
-    javascript_svg,
-    graphql_svg,
-    typescript_svg,
+    css_svg,
     html_svg
 }
