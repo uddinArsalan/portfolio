@@ -120,7 +120,7 @@
     left: 0; */
     animation-name: nav-animate;
     animation-iteration-count: 1;
-    animation-duration: 3s;
+    animation-duration: 1s;
   }
   
   @keyframes nav-animate {
