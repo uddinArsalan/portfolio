@@ -1,7 +1,6 @@
 import bgVideo from "../../public/assets/video.mp4";
 import { Link } from "react-scroll";
 import { RoughNotation } from "react-rough-notation";
-import posterImage from "../../public/assets/Matrix-1s-1084px.png"
 
 const Background = () => {
   return (
@@ -10,7 +9,7 @@ const Background = () => {
         <div className="absolute grid grid-row-3 gap-y-8 place-items-center place-content-center justify-center z-20
            ">
           <RoughNotation type="highlight" animationDelay={100} animationDuration={1000} color={"green"} show={true}>
-            <div className="text-white font-extrabold text-6xl md:m-0 m-10 flex justify-center items-center text-center p-2">Welcome To My Portfolio</div>
+            <div className="text-white font-extrabold text-6xl md:m-0 m-10 flex justify-center items-center text-center md:p-2">Welcome To My Portfolio</div>
           </RoughNotation>
           <div className="bg-green-400 text-black font-semibold text-sm pt-2 pr-3 pb-2 pl-3 rounded-md w-32 flex justify-center items-center cursor-pointer">
             <Link
@@ -34,10 +33,9 @@ const Background = () => {
           loop
           playsInline
           muted
-          poster={bgVideo}
           className="cursor-pointer object-cover h-full"
         >
-          <source src={bgVideo} type="video/mp4" className="" />
+          <source src={bgVideo} type="video/mp4" className=""/>
           Your browser does not support the video tag.
         </video>
       </header>

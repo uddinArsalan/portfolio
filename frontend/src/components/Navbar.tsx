@@ -32,8 +32,7 @@ const Navbar = ({ showNav, setShowNav }: NavbarProp) => {
         ></i>
       )}
       {showNav ? (
-        <div className="bg-[#151515] font-semibold text-2xl text-[#bebebe] grid grid-rows-6 place-items-center p-10 cursor-pointer h-screen lg:sticky lg:top-0 lg:bottom-0 lg:left-0 w-full lg:col-span-1 col-span-2 
-        navTransition opacity-100">
+        <div className="bg-[#151515] font-semibold text-2xl text-[#bebebe] grid grid-rows-5 md:grid-rows-6 grid-cols-1 place-items-center p-10 cursor-pointer md:h-screen lg:sticky lg:top-0 lg:bottom-0 lg:left-0 lg:col-span-1 col-span-2 navbar-transition">
           <div className="flex justify-center items-center">
             <img
               src={portfolio}
@@ -41,11 +40,11 @@ const Navbar = ({ showNav, setShowNav }: NavbarProp) => {
               className="rounded-full border-none w-24 md:w-32 p-0 flex"
             />
           </div>
-          <div className="text-[rgb(136,206,2)] text-4xl mt-8 font-bold">
+          <div className="text-[rgb(136,206,2)] md:block hidden text-4xl md:mt-8 font-bold">
             ARSALAN
           </div>
           {/* <div className="text-[#989494] ">Home</div> */}
-          <div className="md:marker:items-end">
+          <div className="md:items-end items-start">
             <Link
               activeClass="active"
               to="about"
