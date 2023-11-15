@@ -25,7 +25,7 @@ const ProjectSection = () => {
               controls.start('hidden');
             }
           },
-          { threshold: 0.7 }
+          { threshold: 0.4 }
         );
 
         observer.observe(element);
