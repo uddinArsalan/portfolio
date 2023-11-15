@@ -38,7 +38,7 @@ const Projects : Project[] = [
         id : 4,
         name : "FLIX NEST",
         description : "Explore & Bookmark Upcoming Movies and Trailers",
-        project_link : "https://flixnest.netlify.app/",
+        project_link : "https://flixnest.vercel.app/",
         imgSrc : Flixnest
     },
     {
