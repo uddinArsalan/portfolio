@@ -9,6 +9,7 @@ import firebase_svg from "./firebase.svg"
 import tailwindcss_svg from "./tailwindcss-icon.svg"
 import html_svg from "./html-5.svg"
 import sql_svg from "./mysql.svg"
+import java_svg from "./java.svg"
 
 
 export default {
@@ -22,5 +23,6 @@ export default {
     firebase_svg,
     css_svg,
     sql_svg,
+    java_svg,
     html_svg
 }

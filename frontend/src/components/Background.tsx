@@ -8,10 +8,10 @@ const Background = () => {
       <header className="relative flex justify-center items-center text-white h-screen">
         <div className="absolute grid grid-row-3 gap-y-8 place-items-center place-content-center justify-center z-20
            ">
-          <RoughNotation type="highlight" animationDelay={100} animationDuration={1000} color={"green"} show={true}>
-            <div className="text-white font-extrabold text-6xl md:m-0 m-10 flex justify-center items-center text-center md:p-2">Welcome To My Portfolio</div>
+          <RoughNotation type={`box`} animationDelay={100} animationDuration={1000} color={"rgb(136,206,2)"} show={true}>
+            <div className="text-black font-extrabold text-6xl md:m-0 m-10 flex justify-center items-center text-center md:p-2">Welcome To My Portfolio</div>
           </RoughNotation>
-          <div className="bg-green-400 text-black font-semibold text-sm pt-2 pr-3 pb-2 pl-3 rounded-md w-32 flex justify-center items-center cursor-pointer">
+          <div className="bg-black text-sm pt-3 pr-5 pb-3 pl-5 rounded-md flex justify-center items-center cursor-pointer text-white">
             <Link
               activeClass="active"
               to="about"
@@ -23,9 +23,9 @@ const Background = () => {
             </Link>
           </div>
           <div className="flex gap-8 text-5xl cursor-pointer">
-            <a href="https://twitter.com/Arsalan_0101" target="_blank"><i className="fa-brands fa-square-x-twitter text-green-500"></i></a>
-            <a href="https://github.com/uddinArsalan" target="_blank"><i className="fa-brands fa-github text-green-500"></i></a>
-            <a href="https://www.linkedin.com/in/arsalan-uddin-2356b81b9" target="_blank"><i className="fa-brands fa-linkedin text-green-500"></i></a>
+            <a href="https://twitter.com/Arsalan_0101" target="_blank"><i className="fa-brands fa-square-x-twitter text-black "></i></a>
+            <a href="https://github.com/uddinArsalan" target="_blank"><i className="fa-brands fa-github text-black"></i></a>
+            <a href="https://www.linkedin.com/in/arsalan-uddin-2356b81b9" target="_blank"><i className="fa-brands fa-linkedin text-black"></i></a>
           </div>
         </div>
         <video
