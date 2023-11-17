@@ -1,4 +1,4 @@
-import bgVideo from "../../public/assets/video.mp4";
+import bgVideo from "../../public/assets/video2.webm";
 import { Link } from "react-scroll";
 import { RoughNotation } from "react-rough-notation";
 
@@ -35,7 +35,7 @@ const Background = () => {
           muted
           className="cursor-pointer object-cover h-full"
         >
-          <source src={bgVideo} type="video/mp4" className=""/>
+          <source src={bgVideo} type="video/webm" className=""/>
           Your browser does not support the video tag.
         </video>
       </header>

@@ -42,7 +42,7 @@ const Projects : Project[] = [
         imgSrc : Flixnest
     },
     {
-        id : 1,
+        id : 5,
         name : "BEYOND SKILL",
         description : "Unlock Your Potential with BeyondSkill's Wide Range of Courses",
         project_link : "https://beyondskill.netlify.app/",

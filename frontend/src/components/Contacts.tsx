@@ -29,9 +29,9 @@ const Contacts = () => {
         <div className="text-[rgb(136,206,2)] text-5xl font-bold">Contact Us</div>
         <form
           onSubmit={handleSubmit}
-          className="grid grid-rows-5 gap-8 md:gap-12 w-full"
+          className="grid grid-rows-5 grid-cols-1 w-full"
         >
-          <div className="">
+          <div>
             <label
               htmlFor="name"
               className="text-[rgb(136,206,2)] text-4xl font-bold"

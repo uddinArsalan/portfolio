@@ -8,6 +8,8 @@ import javascript_svg from "./javascript.svg"
 import firebase_svg from "./firebase.svg"
 import tailwindcss_svg from "./tailwindcss-icon.svg"
 import html_svg from "./html-5.svg"
+import sql_svg from "./mysql.svg"
+
 
 export default {
     react_svg,
@@ -19,5 +21,6 @@ export default {
     node_svg,
     firebase_svg,
     css_svg,
+    sql_svg,
     html_svg
 }
