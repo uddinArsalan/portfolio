@@ -1,4 +1,4 @@
-import bgVideo from "../../public/assets/video2.webm";
+import bgVideo from "../../public/assets/video3.webm";
 import { Link } from "react-scroll";
 import { RoughNotation } from "react-rough-notation";
 

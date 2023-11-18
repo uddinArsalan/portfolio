@@ -63,7 +63,7 @@ const ProjectSection = () => {
           >
             <img src={imgSrc} alt="" className="" />
             <a href={project_link} target="_blank">
-              <div className="bg-[#0b0b0b] p-6 rounded-br-md rounded-bl-md flex justify-between">
+              <div className="bg-[#0b0b0b] p-3 md:p-6 rounded-br-md rounded-bl-md flex justify-between">
                 <div>
                   <div>
                     <span className="font-bold">{name}</span>{" "}
