@@ -9,7 +9,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 //https://apollo-server-12hj.onrender.com
 
 const client = new ApolloClient({
-  uri: "http://localhost:4000/",
+  uri: "https://apollo-server-12hj.onrender.com",
   cache: new InMemoryCache(),
 });
 
