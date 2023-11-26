@@ -76,7 +76,7 @@ const Blogs = () => {
               key={article.node.title}
               className="bg-gray-900 text-black p-6 flex flex-col gap-8"
             >
-              <img src={article.node.coverImage.url} alt="" className="w-3/4" />
+              <img src={article.node.coverImage.url} alt="" className="md:w-3/4 object-cover" />
               <h2 className="text-lg md:text-2xl text-[rgb(219,221,216)] bg-black p-2 rounded-lg w-fit">
                 {article.node.title}
               </h2>

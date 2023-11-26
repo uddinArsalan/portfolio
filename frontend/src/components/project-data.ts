@@ -45,7 +45,7 @@ const Projects : Project[] = [
         id : 5,
         name : "BEYOND SKILL",
         description : "Unlock Your Potential with BeyondSkill's Wide Range of Courses",
-        project_link : "https://beyondskill.netlify.app/",
+        project_link : "https://beyondskill.vercel.app/",
         imgSrc : BeyondSkill
     },
 ]
