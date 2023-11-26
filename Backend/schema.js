@@ -1,21 +1,30 @@
 export const typeDefs = `#graphql
-    type Post {
+
+    type PostCoverImage {
+        url : String! 
+    }
+
+    type Node {
         title : String!
+        publishedAt : String!
         brief : String!
-        slug : String!
-        dateAdded : String!
-        coverImage : String
+        url : String!
+        coverImage : PostCoverImage
     }
 
-    type Publication {
-        posts : [Post]
+    type Edge {
+        node : Node
     }
 
-    type User {
-        publication : Publication
+    type Post {
+        edges : [Edge]
     }
 
-    type Query {
-        user(username: String): User
+   type Publication {
+    posts(first: Int): Post 
     }
+
+type Query {
+    publication(host: String!): Publication
+}
 `;

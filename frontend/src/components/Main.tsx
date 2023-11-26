@@ -6,8 +6,10 @@ import ProjectSection from "./ProjectSection";
 import Skills from "./Skills";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
+//https://apollo-server-12hj.onrender.com
+
 const client = new ApolloClient({
-  uri: "https://apollo-server-12hj.onrender.com",
+  uri: "http://localhost:4000/",
   cache: new InMemoryCache(),
 });
 

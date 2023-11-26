@@ -3,24 +3,34 @@ import { useQuery, gql } from "@apollo/client";
 interface blogTypes {
   title: string;
   brief: string;
-  coverImage: string;
-  dateAdded: string;
-  slug: string;
+  publishedAt : string;
+  url: string;
+  coverImage: {
+    url : string
+  };
+}
+
+interface Node {
+  node : blogTypes
 }
 
 const GET_USER_BLOGS = gql`
   {
-    user(username: "ArsalanU") {
-      publication {
-        posts {
-          brief
-          coverImage
-          dateAdded
-          slug
+    publication(host: "arsalanu.hashnode.dev") {
+    posts(first: 10) {
+      edges {
+        node {
           title
+          publishedAt
+          brief
+          url
+          coverImage {
+            url
+          }
         }
       }
     }
+  }
   }
 `;
 
@@ -50,10 +60,10 @@ const renderSkeleton = () => {
 const Blogs = () => {
   // const [articles,setArticles] = useState<blogTypes[]>([])
   const { loading, data } = useQuery(GET_USER_BLOGS);
-  const articles: blogTypes[] = loading
+  console.log(data)
+  const articles: Node[] = loading
     ? undefined
-    : data.user.publication.posts;
-  const BASE_URL = "https://arsalanu.hashnode.dev/";
+    : data.publication.posts.edges
   return (
     <div
       className="bg-black grid md:p-16 p-8 gap-4 md:gap-8 place-items-center"
@@ -61,22 +71,22 @@ const Blogs = () => {
     >
       <div className="text-[rgb(136,206,2)] text-4xl font-bold">BLOGS..</div>
       {articles
-        ? articles.map((article: blogTypes) => (
+        ? articles.map((article: Node) => (
             <div
-              key={article.title}
+              key={article.node.title}
               className="bg-gray-900 text-black p-6 flex flex-col gap-8"
             >
-              <img src={article.coverImage} alt="" className="w-3/4" />
+              <img src={article.node.coverImage.url} alt="" className="w-3/4" />
               <h2 className="text-lg md:text-2xl text-[rgb(219,221,216)] bg-black p-2 rounded-lg w-fit">
-                {article.title}
+                {article.node.title}
               </h2>
               <p className="text-md md:text-xl font-semibold text-white md:font-bold">
-                {article.brief}
+                {article.node.brief}
               </p>
               <p className="text-[rgb(197,255,88)] font-bold">
-                {article.dateAdded}
+                {article.node.publishedAt}
               </p>
-              <a href={BASE_URL + article.slug} target="_blank">
+              <a href={article.node.url} target="_blank">
                 <div className="flex justify-between gap-6 cursor-pointer p-2 items-center hover:bg-black w-fit rounded-lg">
                   <div className="text-white">Read More...</div>
                   <i className="fa-solid fa-square-arrow-up-right hover:text-[rgb(197,255,88)] text-gray-900 text-4xl"></i>

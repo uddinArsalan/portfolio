@@ -8,6 +8,7 @@ export default {
     extend: {
       backgroundImage: {
         'hero': "url('../public/assets/skillbg.jpg')",
+        'portfolio-svg' : "url('../public/assets/portfolio.svg')"
       },
     },
   },

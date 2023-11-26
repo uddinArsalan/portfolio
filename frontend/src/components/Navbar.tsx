@@ -1,7 +1,7 @@
 import portfolio from "../assets/Profile.png";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import { Link} from "react-scroll";
+import { Link } from "react-scroll";
 
 interface NavbarProp {
   showNav: boolean;
@@ -23,6 +23,8 @@ const Navbar = ({ showNav, setShowNav }: NavbarProp) => {
     }
   }, [isDesktopOrLaptop]);
 
+  // bg-[rgb(136,206,2)]
+
   return (
     <>
       {showBar && (
@@ -33,12 +35,12 @@ const Navbar = ({ showNav, setShowNav }: NavbarProp) => {
       )}
       {showNav ? (
         <div className={`bg-[#151515] font-semibold text-2xl text-[#bebebe] grid grid-rows-5 md:grid-rows-6 grid-cols-1 place-items-center p-10 cursor-pointer h-screen lg:sticky lg:top-0 lg:bottom-0 lg:left-0 lg:col-span-1 col-span-2 navbar-animate navbar-transition`}>
-          <div className="flex justify-center items-center rounded-full bg-[rgb(136,206,2)]">
+          <div className="h-48 w-40 flex justify-center bg-cover bg-portfolio-svg bg-center bg-no-repeat">
             <img
               src={portfolio}
               alt=""
-              className="rounded-full border-none w-24 md:w-32 p-0 flex"
-            />
+              className="object-contain w-24 border-none"
+            />    
           </div>
           <div className="text-[rgb(136,206,2)] md:block hidden text-4xl md:mt-8 font-bold">
             ARSALAN
@@ -57,7 +59,7 @@ const Navbar = ({ showNav, setShowNav }: NavbarProp) => {
             </Link>
           </div>
           <div className="md:items-end">
-          <Link
+            <Link
               activeClass="active"
               to="projects"
               spy={true}
@@ -69,7 +71,7 @@ const Navbar = ({ showNav, setShowNav }: NavbarProp) => {
             </Link>
           </div>
           <div className="md:items-end">
-          <Link
+            <Link
               activeClass="active"
               to="blogs"
               spy={true}
@@ -81,7 +83,7 @@ const Navbar = ({ showNav, setShowNav }: NavbarProp) => {
             </Link>
           </div>
           <div className="md:items-end">
-          <Link
+            <Link
               activeClass="active"
               to="contact"
               spy={true}
