@@ -35,11 +35,11 @@ const Navbar = ({ showNav, setShowNav }: NavbarProp) => {
       )}
       {showNav ? (
         <div className={`bg-[#151515] font-semibold text-2xl text-[#bebebe] grid grid-rows-5 md:grid-rows-6 grid-cols-1 place-items-center p-10 cursor-pointer h-screen lg:sticky lg:top-0 lg:bottom-0 lg:left-0 lg:col-span-1 col-span-2 navbar-animate navbar-transition`}>
-          <div className="h-48 w-40 flex justify-center bg-cover bg-portfolio-svg bg-center bg-no-repeat">
+          <div className="flex justify-center">
             <img
               src={portfolio}
               alt=""
-              className="object-contain w-24 border-none"
+              className="h-fit rounded-full bg-blue-500 w-24 border-4"
             />    
           </div>
           <div className="text-[rgb(136,206,2)] md:block hidden text-4xl md:mt-8 font-bold">

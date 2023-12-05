@@ -31,22 +31,22 @@ const Projects : Project[] = [
         id : 3,
         name : "ADDICTSY",
         description : "Empowering Addiction Recovery through Personal Chats",
-        project_link : "https://addictsy.netlify.app/",
+        project_link : "https://addictsy.vercel.app/",
         imgSrc : Addictsy
     },
     {
         id : 4,
-        name : "FLIX NEST",
-        description : "Explore & Bookmark Upcoming Movies and Trailers",
-        project_link : "https://flixnest.vercel.app/",
-        imgSrc : Flixnest
-    },
-    {
-        id : 5,
         name : "BEYOND SKILL",
         description : "Unlock Your Potential with BeyondSkill's Wide Range of Courses",
         project_link : "https://beyondskill.vercel.app/",
         imgSrc : BeyondSkill
+    },
+    {
+        id : 5,
+        name : "FLIX NEST",
+        description : "Explore & Bookmark Upcoming Movies and Trailers",
+        project_link : "https://flixnest.vercel.app/",
+        imgSrc : Flixnest
     },
 ]
 
