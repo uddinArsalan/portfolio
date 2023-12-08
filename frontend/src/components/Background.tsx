@@ -34,10 +34,10 @@ const Background = () => {
   return (
     <>
       <header ref={birdBGRef} className="relative flex justify-center items-center text-white h-screen">
-        <div className="absolute grid grid-row-3 gap-y-8 place-items-center place-content-center justify-center z-20
+        <div className="absolute grid grid-row-3 z-20 gap-6 place-items-center place-content-center justify-center
            ">
           {/* <RoughNotation type="highlight" animate={true} animationDelay={100} animationDuration={1000} color={"rgb(37, 99, 235)"} show={true}> */}
-          <div className="text-black opacity-90 font-extrabold text-6xl md:m-0 m-10 flex justify-center items-center text-center md:p-2">Welcome to my Portfolio</div>
+          <div className="text-black font-semibold md:font-extrabold text-5xl md:text-6xl p-6 flex justify-center items-center text-center ">Welcome to my Portfolio</div>
           {/* </RoughNotation> */}
           <div className="bg-black text-sm pt-3 pr-5 pb-3 pl-5 rounded-md flex justify-center items-center cursor-pointer text-white">
             <Link
