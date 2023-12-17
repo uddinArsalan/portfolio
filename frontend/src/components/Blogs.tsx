@@ -41,7 +41,7 @@ const renderSkeleton = () => {
       key={index}
       className="bg-gray-800 p-6 flex flex-col w-full gap-6 md:gap-8 animate-pulse"
     >
-      <div className="bg-gray-700 h-80 md:h-96 md:w-3/4 rounded-md"></div>
+      <div className="bg-gray-700 h-72 md:h-96 md:w-3/4 rounded-md"></div>
 
       <div className="bg-gray-700 h-8 p-3 w-3/4 rounded-md"></div>
       <div className="flex flex-col gap-3">
@@ -50,7 +50,7 @@ const renderSkeleton = () => {
       <div className="bg-gray-700 p-2 w-full rounded-md"></div>
       <div className="bg-gray-700 p-2 w-full rounded-md"></div>
       </div>
-      <div className="bg-gray-700 h-6 p-4 w-1/2 rounded-md"></div>
+      <div className="bg-gray-700 h-6 p-3 w-1/2 rounded-md"></div>
       <div className="bg-gray-700 h-16 md:p-4 md:w-1/4 w-1/3 rounded-md"></div>
     </div>
   ));
