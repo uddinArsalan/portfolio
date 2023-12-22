@@ -24,7 +24,7 @@ const Projects : Project[] = [
         id : 2,
         name : "SKETCH SYNC",
         description : "Collaborative Real-time Drawings & Creations",
-        project_link : "https://sketchsync.netlify.app/",
+        project_link : "https://sketchsync.vercel.app/",
         imgSrc : Sketchsync
     },
     {
