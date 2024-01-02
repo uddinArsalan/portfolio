@@ -26,7 +26,7 @@ const Contacts = () => {
         className={`${(open) ? 'bg-gray-900 bg-opacity-50 blur-sm' : ''} ${"flex justify-center items-center md:gap-16 flex-col gap-8 bg-black p-8 md:p-12"} `}
         id="contact"
       >
-        <div className="text-[rgb(136,206,2)] text-5xl font-bold">Contact Us</div>
+        <div className="text-[rgb(136,206,2)] text-5xl font-bold">Contact Me</div>
         <form
           onSubmit={handleSubmit}
           className="w-full flex flex-col gap-8"

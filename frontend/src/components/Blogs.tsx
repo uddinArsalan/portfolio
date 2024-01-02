@@ -51,11 +51,26 @@ const renderSkeleton = () => {
       <div className="bg-gray-700 p-2 w-full rounded-md"></div>
       </div>
       <div className="bg-gray-700 h-6 p-3 w-1/2 rounded-md"></div>
-      <div className="bg-gray-700 h-16 md:p-4 md:w-1/4 w-1/3 rounded-md"></div>
+      <div className="bg-gray-700 h-9 md:h-14 md:p-4 md:w-1/4 w-1/3 rounded-md"></div>
     </div>
   ));
   return skeletons;
 };
+
+const dateFormatter = (originalTimestamp : string ) : string => {
+  const date = new Date(originalTimestamp);
+  const formatter = new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+    timeZone: "UTC" // specifying the time zone as UTC
+  });
+  const formattedDate = formatter.format(date);
+  return formattedDate
+}
 
 const Blogs = () => {
   // const [articles,setArticles] = useState<blogTypes[]>([])
@@ -84,7 +99,7 @@ const Blogs = () => {
                 {article.node.brief}
               </p>
               <p className="text-[rgb(197,255,88)] font-bold">
-                {article.node.publishedAt}
+                {dateFormatter(article.node.publishedAt)}
               </p>
               <a href={article.node.url} target="_blank">
                 <div className="flex justify-between gap-6 cursor-pointer p-2 items-center hover:bg-black w-fit rounded-lg">

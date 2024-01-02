@@ -7,7 +7,7 @@ const Skills = () => {
       <div className="grid grid-cols-4 gap-6 md:gap-8 items-center mb-16">
         {Object.keys(svgs).map((key) => (
           <div key={key}>
-            <img src={(svgs as any)[key]} key={key} alt=""  className="w-24 object-cover bg-cover p-[6px] md:p-4 bg-[rgb(0,0,0)] border-2 border-opacity-20 border-gray-200 rounded-lg hover:scale-105 cursor-pointer transition-transform flex justify-center items-center"/>
+            <img src={(svgs as any)[key]} alt=""  className="w-24 object-cover bg-cover p-[6px] md:p-4 bg-[rgb(0,0,0)] border-2 border-opacity-20 border-gray-200 rounded-lg hover:scale-105 cursor-pointer transition-transform flex justify-center items-center"/>
           </div>
         ))}
       </div>
