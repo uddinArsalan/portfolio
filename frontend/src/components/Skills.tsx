@@ -2,7 +2,7 @@ import svgs from "../../public/assets/skills svgs/";
 
 const Skills = () => {
   return (
-    <div className=" bg-center bg-no-repeat bg-cover flex flex-col p-12 md:p-12 gap-12 items-center bg-zinc-950">
+    <div className=" bg-center bg-no-repeat bg-cover flex flex-col p-6 md:p-12 gap-12 items-center bg-zinc-950">
       <div className="text-[rgb(136,206,2)] text-4xl md:text-5xl font-bold">My Skills</div>
       <div className="grid grid-cols-4 md:grid-cols-5 gap-6 md:gap-8 items-center mb-16">
         {Object.keys(svgs).map((key) => (

@@ -25,7 +25,7 @@ const ProjectSection = () => {
               controls.start('hidden');
             }
           },
-          { threshold: 0.4 }
+          { threshold: 0.5 }
         );
 
         observer.observe(element);
@@ -68,7 +68,7 @@ const ProjectSection = () => {
                   <div>
                     <span className="font-bold">{name}</span>{" "}
                   </div>
-                  <div className="text-sm">{description}</div>
+                  <div className="text-sm">{description}<span className="text-sm text-[rgb(136,206,2)] p-2 gap-2">{id <= 2 ? "Currently Building" : ""}</span></div>
                 </div>
                 <i className="fa-solid fa-square-arrow-up-right text-[rgb(136,206,2)] text-4xl"></i>
               </div>

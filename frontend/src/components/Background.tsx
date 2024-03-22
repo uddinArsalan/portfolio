@@ -1,71 +1,45 @@
-// import bgVideo from "../../public/assets/video3.webm";
 import { Link } from "react-scroll";
-// @ts-ignore
-// import BIRDS from 'vanta/dist/vanta.birds.min';
-import WAVE from 'vanta/dist/vanta.waves.min';
-// import { RoughNotation } from "react-rough-notation";
-import { useRef, useState, useEffect } from "react";
+import { BackgroundBeams } from "./BackgroundBeams";
 
 const Background = () => {
-  const [vantaEffect, setVantaEffect] = useState(null)
-  // const myRef = useRef(null)
-  const birdBGRef = useRef<HTMLDivElement>(null)
-  useEffect(() => {
-    if (!vantaEffect) {
-      setVantaEffect(WAVE({
-        el: birdBGRef.current,
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        scale: 1.00,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scaleMobile: 1.00,
-        // backgroundColor: 0x12b64,
-        // color1: "rgb(136,206,2)",
-        // color2: "rgb(136,206,2)"
-      }))
-    }
-    // return () => {
-    //   if (vantaEffect) vantaEffect.destroy()
-    // }
-  }, [vantaEffect])
-  // console.log(birdBGRef.current)
   return (
     <>
-      <header ref={birdBGRef} className="relative flex justify-center items-center text-white h-screen">
-        <div className="absolute grid grid-row-3 z-20 gap-6 place-items-center place-content-center justify-center
-           ">
-          {/* <RoughNotation type="highlight" animate={true} animationDelay={100} animationDuration={1000} color={"rgb(37, 99, 235)"} show={true}> */}
-          <div className="text-black font-semibold md:font-extrabold text-5xl md:text-6xl p-6 flex justify-center items-center text-center ">Welcome to my Portfolio</div>
-          {/* </RoughNotation> */}
-          <div className="bg-black text-sm pt-3 pr-5 pb-3 pl-5 rounded-md flex justify-center items-center cursor-pointer text-white">
-            <Link
-              activeClass="active"
-              to="about"
-              spy={true}
-              smooth={true}
-              duration={1000}
-            >
-              Get Started
-            </Link>
-          </div>
-          <div className="flex gap-8 text-5xl cursor-pointer">
-            <a href="https://twitter.com/Arsalan_0101" target="_blank"><i className="fa-brands fa-square-x-twitter text-black "></i></a>
-            <a href="https://github.com/uddinArsalan" target="_blank"><i className="fa-brands fa-github text-black"></i></a>
-            <a href="https://www.linkedin.com/in/arsalan-uddin-2356b81b9" target="_blank"><i className="fa-brands fa-linkedin text-black"></i></a>
+      <header className="relative flex justify-center items-center text-white h-screen">
+        <div className="h-screen bg-neutral-950 w-full">
+          {/* <div className="h-96 relative w-full flex flex-col items-center justify-center rounded-lg"> */}
+              <BackgroundBeams />
+          <div className="flex flex-col gap-6 justify-center items-center h-full ">
+            <div className="text-black font-bold md:font-extrabold text-5xl md:text-6xl p-6 flex justify-center items-center text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600">
+              Welcome to my Portfolio
+            </div>
+            <div className="text-sm pt-3 pr-5 pb-3 pl-5 rounded-md flex justify-center items-center cursor-pointer font-bold text-white bg-gradient-to-br from-green-600 to-green-800 hover:from-green-800 hover:to-green-700 shadow">
+              <Link
+                activeClass="active"
+                to="about"
+                spy={true}
+                smooth={true}
+                duration={1000}
+                className="z-40"
+              >
+                Get Started
+              </Link>
+            </div>
+            <div className="flex gap-8 text-5xl cursor-pointer z-40">
+              <a href="https://twitter.com/Arsalan_0101" target="_blank">
+                <i className="fa-brands fa-square-x-twitter text-gray-600 "></i>
+              </a>
+              <a href="https://github.com/uddinArsalan" target="_blank">
+                <i className="fa-brands fa-github text-gray-600 "></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/arsalan-uddin-2356b81b9"
+                target="_blank"
+              >
+                <i className="fa-brands fa-linkedin text-gray-600 "></i>
+              </a>
+            </div>
           </div>
         </div>
-        {/* <video
-          autoPlay
-          loop
-          playsInline
-          muted
-          className="cursor-pointer object-cover h-full"
-        >
-          <source src={bgVideo} type="video/webm" className=""/>
-          Your browser does not support the video tag.
-        </video> */}
       </header>
     </>
   );

@@ -39,10 +39,10 @@ const Navbar = ({ showNav, setShowNav }: NavbarProp) => {
             <img
               src={portfolio}
               alt=""
-              className="h-fit rounded-full bg-blue-500 w-24 border-4"
+              className="h-fit rounded-full bg-blue-500 w-24"
             />    
           </div>
-          <div className="text-[rgb(136,206,2)] md:block hidden text-4xl md:mt-8 font-bold">
+          <div className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-300 to-neutral-700 md:block hidden text-4xl md:mt-8 font-bold">
             ARSALAN
           </div>
           {/* <div className="text-[#989494] ">Home</div> */}
