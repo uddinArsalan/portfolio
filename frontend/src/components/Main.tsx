@@ -25,6 +25,7 @@ const Main = () => {
       </ApolloProvider>
       <Skills />
       <Contacts />
+      {/* <img src="https://skillicons.dev/icons?i=postgresql&theme=light" alt="" /> */}
     </div>
   );
 };
