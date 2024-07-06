@@ -1,12 +1,6 @@
-import { motion, useAnimation,Variants } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useEffect,useRef } from "react";
 import {Projects} from "../../data/project-data.js";
-
-
-const projectVariants: Variants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0 },
-};
 
 const ProjectSection: React.FC = () => {
   const controlsArray = Projects.map(() => useAnimation());
