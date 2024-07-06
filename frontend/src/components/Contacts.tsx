@@ -77,8 +77,9 @@ const Contacts = () => {
               />
               <ValidationError prefix="Message" field="message" errors={state.errors} />
             </div>
+            
             <ReCAPTCHA
-              sitekey={import.meta.env.VITE_SITE_KEY}
+              sitekey={"6LcnBu4oAAAAAJT2zNV3pVHXKIlL6haBuBE1h0sm"}
               className="flex items-center m-0 h-fit"
             />
             <button
