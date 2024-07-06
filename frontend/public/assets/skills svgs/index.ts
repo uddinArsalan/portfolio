@@ -1,24 +1,24 @@
-import react_svg from "./react.svg";
-import typescript_svg from "./typescript-icon.svg";
-import css_svg from "./css-3.svg";
-import graphql_svg from "./graphql.svg";
-import node_svg from "./nodejs.svg";
-import bootsrap_svg from "./bootstrap.svg";
-import javascript_svg from "./javascript.svg";
-import tailwindcss_svg from "./tailwindcss-icon.svg";
-import firebase_svg from "./firebase.svg";
-import html_svg from "./html-5.svg";
-import sql_svg from "./mysql.svg";
-import java_svg from "./java.svg";
-import nextjs_svg from "./nextjs-icon.svg";
-import material_ui_svg from "./material-ui.svg";
-import postgresql from "./postgresql.svg";
-import prisma from "./prisma-2.svg";
-import threejs from "./threejs.svg";
-import python from "./Python.svg";
-import express from "./express.svg"
+import react_svg from "/assets/skills svgs/react.svg";
+import typescript_svg from "/assets/skills svgs/typescript-icon.svg";
+import css_svg from "/assets/skills svgs/css-3.svg";
+import graphql_svg from "/assets/skills svgs/graphql.svg";
+import node_svg from "/assets/skills svgs/nodejs.svg";
+import bootsrap_svg from "/assets/skills svgs/bootstrap.svg";
+import javascript_svg from "/assets/skills svgs/javascript.svg";
+import tailwindcss_svg from "/assets/skills svgs/tailwindcss-icon.svg";
+import firebase_svg from "/assets/skills svgs/firebase.svg";
+import html_svg from "/assets/skills svgs/html-5.svg";
+import sql_svg from "/assets/skills svgs/mysql.svg";
+import java_svg from "/assets/skills svgs/java.svg";
+import nextjs_svg from "/assets/skills svgs/nextjs-icon.svg?url";
+import material_ui_svg from "/assets/skills svgs/material-ui.svg";
+import postgresql from "/assets/skills svgs/postgresql.svg";
+import prisma from "/assets/skills svgs/prisma-2.svg";
+import threejs from "/assets/skills svgs/threejs.svg";
+import python from "/assets/skills svgs/Python.svg?url";
+import express from "/assets/skills svgs/express.svg?url"
 
-export default {
+export const svgs = {
   nextjs_svg,
   react_svg,
   typescript_svg,

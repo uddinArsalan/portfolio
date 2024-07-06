@@ -4,87 +4,92 @@ import { useForm, ValidationError } from '@formspree/react';
 import Modal from './Modal';
 const Contacts = () => {
   const [state, handleSubmit] = useForm("mwkdzvdb");
-  // if (state.succeeded) {
-  //   return <p className="bg-black p-6 md:p-12 flex flex-col gap-12 md:gap-16 justify-center items-center"
-  //   id="contact">Thanks for joining!</p>;
-  // }
-  //flex-col gap-8 md:gap-16 p-8 md:p-12
   const [open, setOpen] = useState<boolean>(false);
-  useEffect(() => {
-    if (state.succeeded) setOpen(true)
-  }, [state.succeeded])
 
-  const closeModal = () => {
-    setOpen(prev => !prev)
-  }
+  useEffect(() => {
+    if (state.succeeded) setOpen(true);
+  }, [state.succeeded]);
+
+  const closeModal = () => setOpen(prev => !prev);
+
   return (
     <>
-      <div className={open ? 'relative top-60' : 'hidden'}>
+     <div className={open ? 'fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50' : 'hidden'}>
         <Modal closeModal={closeModal} />
       </div>
       <div
-        className={`${(open) ? 'bg-gray-900 bg-opacity-50 blur-sm' : ''} ${"flex justify-center items-center md:gap-16 flex-col gap-8 bg-black p-8 md:p-12"} `}
+        className={`${open ? 'blur-sm' : ''} bg-gradient-to-b from-neutral-900 to-black py-16 px-4 sm:px-6 lg:px-8`}
         id="contact"
       >
-        <div className="text-[rgb(136,206,2)] text-5xl font-bold">Contact Me</div>
-        <form
-          onSubmit={handleSubmit}
-          className="w-full flex flex-col gap-8"
-        >
-          <div>
-            <label
-              htmlFor="name"
-              className="text-[rgb(136,206,2)] text-3xl md:text-4xl font-bold"
-            >
-              Name
-            </label>
-            <input id="name" type="text" name="name" className="p-6 md:p-8 w-full rounded-sm" placeholder='Enter your name' disabled={open} />
-            <ValidationError
-              prefix="Name"
-              field="name"
-              errors={state.errors}
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-emerald-300 to-emerald-600">
+            Contact Me
+          </h2>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label htmlFor="name" className="block text-emerald-400 text-sm font-bold mb-2">Name</label>
+              <input
+                id="name"
+                type="text"
+                name="name"
+                className="w-full p-3 bg-neutral-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                placeholder='Enter your name'
+                required
+                disabled={state.submitting || open}
+              />
+              <ValidationError prefix="Name" field="name" errors={state.errors} />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-emerald-400 text-sm font-bold mb-2">Email</label>
+              <input
+                id="email"
+                type="email"
+                name="email"
+                className="w-full p-3 bg-neutral-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                placeholder='Enter your email'
+                required
+                disabled={state.submitting || open}
+              />
+              <ValidationError prefix="Email" field="email" errors={state.errors} />
+            </div>
+            <div>
+              <label htmlFor="subject" className="block text-emerald-400 text-sm font-bold mb-2">Subject</label>
+              <input
+                id="subject"
+                type="text"
+                name="subject"
+                className="w-full p-3 bg-neutral-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                placeholder='Enter the subject'
+                required
+                disabled={state.submitting || open}
+              />
+              <ValidationError prefix="Subject" field="subject" errors={state.errors} />
+            </div>
+            <div>
+              <label htmlFor="message" className="block text-emerald-400 text-sm font-bold mb-2">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                className="w-full p-3 bg-neutral-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 h-32"
+                placeholder='Enter your message here'
+                required
+                disabled={state.submitting || open}
+              />
+              <ValidationError prefix="Message" field="message" errors={state.errors} />
+            </div>
+            <ReCAPTCHA
+              sitekey={import.meta.env.VITE_SITE_KEY}
+              className="flex items-center m-0 h-fit"
             />
-          </div>
-          <div>
-            <label
-              htmlFor="email"
-              className="text-[rgb(136,206,2)] text-3xl md:text-4xl font-bold"
+            <button
+              className="w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-md transition-colors duration-300"
+              type="submit"
+              disabled={state.submitting || open}
             >
-              Email
-            </label>
-            <input id="email" type="email" name="email" className="p-6 md:p-8 w-full rounded-sm" placeholder='Enter your email' disabled={open} />
-            <ValidationError
-              prefix="Email"
-              field="email"
-              errors={state.errors}
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="message"
-              className="text-[rgb(136,206,2)] text-3xl md:text-4xl font-bold "
-            >
-              Project Idea
-            </label>
-            <textarea id="message"
-              name="message" className="p-7 md:p-8 w-full rounded-sm" placeholder='Enter your message here' disabled={open} />
-            <ValidationError
-              prefix="Message"
-              field="message"
-              errors={state.errors}
-            />
-          </div>
-          <ReCAPTCHA
-            sitekey="6LcnBu4oAAAAAJT2zNV3pVHXKIlL6haBuBE1h0sm"
-            className="flex items-center m-0 h-fit"
-          />
-          <button
-            className="bg-[rgb(136,206,2)] w-full p-10 md:p-12 rounded-md text-3xl font-bold submit-form"
-            type="submit" disabled={state.submitting || open}
-          >
-            Submit
-          </button>
-        </form>
+              Submit
+            </button>
+          </form>
+        </div>
       </div>
     </>
   );

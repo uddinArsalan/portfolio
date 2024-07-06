@@ -1,13 +1,13 @@
 import Main from "./components/Main";
-import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
 import "./index.css";
 import { useState } from "react";
 
 function App() {
-  const [showNav,setShowNav] = useState<boolean>(false);
+  const [showSidebar,setShowSidebar] = useState<boolean>(false);
   return (
     <div className="grid grid-cols-4">
-      <Navbar showNav={showNav} setShowNav={setShowNav}/>
+      <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar}/>
       <Main />
     </div>
   );

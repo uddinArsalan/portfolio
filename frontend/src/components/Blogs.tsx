@@ -1,115 +1,106 @@
+import React from 'react';
 import { useQuery, gql } from "@apollo/client";
 
-interface blogTypes {
+interface BlogTypes {
   title: string;
   brief: string;
-  publishedAt : string;
+  publishedAt: string;
   url: string;
   coverImage: {
-    url : string
+    url: string
   };
 }
 
 interface Node {
-  node : blogTypes
+  node: BlogTypes
 }
 
 const GET_USER_BLOGS = gql`
   {
     publication(host: "arsalanu.hashnode.dev") {
-    posts(first: 10) {
-      edges {
-        node {
-          title
-          publishedAt
-          brief
-          url
-          coverImage {
+      posts(first: 10) {
+        edges {
+          node {
+            title
+            publishedAt
+            brief
             url
+            coverImage {
+              url
+            }
           }
         }
       }
     }
   }
-  }
 `;
 
 const renderSkeleton = () => {
-  // Create an array of dummy elements to represent the loading state
-  const skeletons = Array.from({ length: 5 }).map((_, index) => (
+  return Array.from({ length: 3 }).map((_, index) => (
     <div
       key={index}
-      className="bg-gray-800 p-6 flex flex-col w-full gap-6 md:gap-8 animate-pulse"
+      className="bg-gray-800 p-6 flex flex-col w-full gap-4 animate-pulse rounded-lg"
     >
-      <div className="bg-gray-700 h-72 md:h-96 md:w-3/4 rounded-md"></div>
-
-      <div className="bg-gray-700 h-8 p-3 w-3/4 rounded-md"></div>
-      <div className="flex flex-col gap-3">
-      <div className="bg-gray-700 p-2 w-full rounded-md"></div>
-      <div className="bg-gray-700 p-2 w-full rounded-md"></div>
-      <div className="bg-gray-700 p-2 w-full rounded-md"></div>
-      <div className="bg-gray-700 p-2 w-full rounded-md"></div>
-      </div>
-      <div className="bg-gray-700 h-6 p-3 w-1/2 rounded-md"></div>
-      <div className="bg-gray-700 h-9 md:h-14 md:p-4 md:w-1/4 w-1/3 rounded-md"></div>
+      <div className="bg-gray-700 h-48 rounded-md"></div>
+      <div className="bg-gray-700 h-6 w-3/4 rounded-md"></div>
+      <div className="bg-gray-700 h-4 w-full rounded-md"></div>
+      <div className="bg-gray-700 h-4 w-full rounded-md"></div>
+      <div className="bg-gray-700 h-4 w-2/3 rounded-md"></div>
+      <div className="bg-gray-700 h-8 w-1/3 rounded-md"></div>
     </div>
   ));
-  return skeletons;
 };
 
-const dateFormatter = (originalTimestamp : string ) : string => {
+const dateFormatter = (originalTimestamp: string): string => {
   const date = new Date(originalTimestamp);
-  const formatter = new Intl.DateTimeFormat("en-US", {
+  return new Intl.DateTimeFormat("en-US", {
     year: "numeric",
     month: "long",
     day: "numeric",
     hour: "numeric",
     minute: "numeric",
     hour12: true,
-    timeZone: "UTC" // specifying the time zone as UTC
-  });
-  const formattedDate = formatter.format(date);
-  return formattedDate
+    timeZone: "UTC"
+  }).format(date);
 }
 
-const Blogs = () => {
-  // const [articles,setArticles] = useState<blogTypes[]>([])
+const Blogs: React.FC = () => {
   const { loading, data } = useQuery(GET_USER_BLOGS);
-  console.log(data)
-  const articles: Node[] = loading
-    ? undefined
-    : data.publication.posts.edges
+  const articles: Node[] = loading ? [] : data?.publication?.posts?.edges || [];
+
   return (
-    <div
-      className="bg-black grid md:p-16 p-8 gap-4 md:gap-8 place-items-center"
-      id="blogs"
-    >
-      <div className="text-[rgb(136,206,2)] text-4xl font-bold">BLOGS..</div>
-      {articles
-        ? articles.map((article: Node) => (
-            <div
-              key={article.node.title}
-              className="bg-gray-900 text-black p-6 flex flex-col gap-8"
-            >
-              <img src={article.node.coverImage.url} alt="" className="md:w-3/4 object-cover" />
-              <h2 className="text-lg md:text-2xl text-[rgb(219,221,216)] bg-black p-2 rounded-lg w-fit">
-                {article.node.title}
-              </h2>
-              <p className="text-md md:text-xl font-semibold text-white md:font-bold">
-                {article.node.brief}
-              </p>
-              <p className="text-[rgb(197,255,88)] font-bold">
-                {dateFormatter(article.node.publishedAt)}
-              </p>
-              <a href={article.node.url} target="_blank">
-                <div className="flex justify-between gap-6 cursor-pointer p-2 items-center hover:bg-black w-fit rounded-lg">
-                  <div className="text-white">Read More...</div>
-                  <i className="fa-solid fa-square-arrow-up-right hover:text-[rgb(197,255,88)] text-gray-900 text-4xl"></i>
+    <div className="bg-gradient-to-b from-black to-neutral-900 py-16 px-4 sm:px-6 lg:px-8" id="blogs">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-emerald-300 to-emerald-600">
+          Blogs
+        </h2>
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {loading
+            ? renderSkeleton()
+            : articles.map((article: Node) => (
+                <div
+                  key={article.node.title}
+                  className="bg-neutral-800 rounded-lg overflow-hidden shadow-lg hover:shadow-emerald-500/20 transition-shadow duration-300 flex flex-col"
+                >
+                  <img src={article.node.coverImage.url} alt="" className="w-full h-48 object-cover" />
+                  <div className="p-6 flex flex-col flex-grow">
+                    <h3 className="text-xl font-bold text-emerald-400 mb-2">{article.node.title}</h3>
+                    <p className="text-gray-300 mb-4 flex-grow line-clamp-3">{article.node.brief}</p>
+                    <p className="text-emerald-300 text-sm mb-4">{dateFormatter(article.node.publishedAt)}</p>
+                    <a 
+                      href={article.node.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-emerald-400 hover:text-emerald-300 mt-auto"
+                    >
+                      Read More
+                      <i className="fa-solid fa-square-arrow-up-right ml-2"></i>
+                    </a>
+                  </div>
                 </div>
-              </a>
-            </div>
-          ))
-        : renderSkeleton()}
+              ))}
+        </div>
+      </div>
     </div>
   );
 };

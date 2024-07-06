@@ -1,46 +1,122 @@
 import profile from "../assets/Profile.png";
-import { Link } from "react-scroll";
-import Text from "./Text";
+import { motion } from 'framer-motion';
+import { Link } from 'react-scroll';
 
-const About = () => {
+interface TimelineItemProps {
+  title: string;
+  children: React.ReactNode;
+}
+
+const TimelineItem: React.FC<TimelineItemProps> = ({ title, children }) => {
   return (
-    <div className="text-white bg-black flex flex-col justify-center items-center gap-10 md:p-12 p-6 w-full" id="about">
-      <div className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-300 to-neutral-700 text-5xl font-bold flex justify-center items-center w-full">About Me</div>
-      <img src={profile} alt="" className="w-48 h-48 rounded-md bg-blue-900" />
-      <div>
-        <Text className="md:text-5xl text-3xl text-white font-mono" text="Hello My Name is " delay={100} />
-        <span className="text-pink-700 font-bold text-3xl md:text-5xl">ARSALAN</span>
-      </div>
-      <div className="p-2 md:p-12 font-serif text-lg flex flex-col gap-6">
-        <div>Hi, I'm Arsalan, a passionate frontend developer dedicated to creating immersive digital experiences through clean, efficient code and stunning design.</div>
-        <div className="flex flex-col">
-          <div className="font-bold text-2xl text-[rgb(136,206,2)]">My Journey</div>
-          <div>My adventure in web development began 3 years ago, and it has been a thrilling ride ever since. I've had the opportunity to work with a variety of technologies and contribute to meaningful projects that have honed my skills and fueled my growth.</div>
+    <motion.div 
+      className="relative pl-8 border-l-2 border-emerald-500"
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="absolute w-4 h-4 bg-emerald-500 rounded-full -left-[9px] top-1"></div>
+      <h3 className="text-2xl font-bold mb-4 text-emerald-400">{title}</h3>
+      {children}
+    </motion.div>
+  );
+};
+
+const About: React.FC = () => {
+  return (
+    <section
+      className="bg-gradient-to-b from-neutral-900 to-black text-white py-20 px-4 sm:px-6 lg:px-8"
+      id="about"
+    >
+      <div className="max-w-4xl mx-auto">
+        <motion.h2 
+          className="text-4xl sm:text-5xl font-extrabold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-emerald-300 to-emerald-600"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          About Me
+        </motion.h2>
+        
+        <div className="flex flex-col sm:flex-row items-center mb-12">
+          <motion.img
+            src={profile}
+            alt="Arsalan"
+            className="w-40 h-40 rounded-full object-cover mb-6 sm:mb-0 sm:mr-8"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+          />
+          <div>
+            <motion.h3 
+              className="text-3xl sm:text-4xl font-bold mb-4"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              Hello, I'm <span className="text-emerald-400">ARSALAN</span>
+            </motion.h3>
+            <motion.p 
+              className="text-lg text-gray-300"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              A passionate frontend developer specializing in creating intuitive and efficient user interfaces.
+            </motion.p>
+          </div>
         </div>
-        <div>
-          <div className="font-bold text-2xl text-[rgb(136,206,2)]">What I Do</div>
-          <div>I specialize in crafting responsive, user-friendly web applications and pixel-perfect designs. Whether it's building interactive websites, optimizing UI/UX, or delving into the intricacies of frontend architecture, I'm dedicated to delivering top-notch solutions.</div>
+
+        <div className="space-y-12">
+          <TimelineItem title="Technical Skills">
+            <p className="text-gray-300">
+              Proficient in: Next.js, React.js, TypeScript, JavaScript, Node.js, Tailwind CSS, GraphQL, PostgreSQL, HTML, CSS
+            </p>
+          </TimelineItem>
+
+          <TimelineItem title="Professional Experience">
+            <h4 className="font-semibold text-emerald-400 mb-2">Frontend Developer Software Engineer Intern at Inherit (April 2024 – June 2024)</h4>
+            <ul className="list-disc list-inside text-gray-300 space-y-1">
+              <li>Developed user interfaces for financial technology platforms</li>
+              <li>Participated in code reviews and debugging sessions</li>
+              <li>Collaborated with design and backend teams</li>
+              <li>Utilized ReactJS, TypeScript, and RESTful APIs</li>
+            </ul>
+          </TimelineItem>
+
+          <TimelineItem title="Key Projects">
+            <ul className="list-disc list-inside text-gray-300 space-y-1">
+              <li>InterViewMate: Next.js, TypeScript, Tailwind, Three.js, Supabase</li>
+              <li>Thread It: React.js, TypeScript, Node.js, Twitter API, Firebase</li>
+              <li>SketchSync: React.js, TypeScript, Canvas API, Firebase</li>
+              <li>Personal Portfolio: React.js, Tailwind CSS, GraphQL</li>
+            </ul>
+          </TimelineItem>
         </div>
-        <div>
-          <div className="font-bold text-2xl text-[rgb(136,206,2)]">What Sets Me Apart</div>
-          <div>My approach combines a keen eye for aesthetics with a deep understanding of the tech stack, allowing me to bridge the gap between creativity and functionality. I thrive on challenges and love turning innovative ideas into reality.</div>
-        </div>
-        <div>
-          <div className="font-bold text-2xl text-[rgb(136,206,2)]">Let's Connect <span><Link
-            activeClass="active"
+
+        <motion.div 
+          className="mt-12 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+        >
+          <h3 className="text-2xl font-bold mb-4 text-emerald-400">Let's Connect</h3>
+          <p className="text-gray-300 mb-6">
+            I'm passionate about creating impactful web applications and always open to new opportunities. Let's discuss how we can collaborate on innovative projects.
+          </p>
+          <Link
             to="contact"
             spy={true}
             smooth={true}
             duration={1000}
+            className="inline-block px-6 py-3 text-lg font-semibold text-white bg-emerald-600 rounded-full hover:bg-emerald-700 transition-colors duration-300"
           >
-            <i className="fa-solid fa-circle-down text-[rgb(136,206,2)] text-2xl cursor-pointer"></i>
-          </Link></span></div>
-          <div>I'm passionate about collaborating on exciting projects and creating remarkable digital experiences. Feel free to reach out for any potential opportunities, collaborations, or just a chat about anything frontend-related.</div>
-        </div>
+            Get in Touch
+          </Link>
+        </motion.div>
       </div>
-    </div>
+    </section>
+  );
+};
 
-  )
-}
-
-export default About
+export default About;
