@@ -1,6 +1,5 @@
 import {svgs} from "../../public/assets/skills svgs/";
 
-// w-24 object-cover bg-cover p-[6px] md:p-4 bg-[rgb(0,0,0)] border-2 rounded-xl border-opacity-20 border-gray-200 flex justify-center items-center
 const Skills = () => {
   return (
     <div className="bg-gradient-to-b from-neutral-900 to-black py-16 px-6 md:px-8">

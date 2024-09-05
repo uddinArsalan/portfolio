@@ -17,12 +17,14 @@ import prisma from "/assets/skills svgs/prisma-2.svg";
 import threejs from "/assets/skills svgs/threejs.svg";
 import python from "/assets/skills svgs/Python.svg?url";
 import express from "/assets/skills svgs/express.svg?url"
+import mongodb from "/assets/skills svgs/mongodb.svg?url"
 
 export const svgs = {
   nextjs_svg,
   react_svg,
   typescript_svg,
   postgresql,
+  mongodb,
   javascript_svg,
   graphql_svg,
   node_svg,

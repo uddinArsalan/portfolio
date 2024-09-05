@@ -1,5 +1,5 @@
 import About from "./About";
-import Background from "./Background";
+import Background from "./HeroSection";
 import Blogs from "./Blogs";
 import Contacts from "./Contacts";
 import ProjectSection from "./ProjectSection";

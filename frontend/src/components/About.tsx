@@ -22,13 +22,14 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ title, children }) => {
   );
 };
 
-const About: React.FC = () => {
+const About = () => {
   return (
     <section
       className="bg-gradient-to-b from-neutral-900 to-black text-white py-20 px-4 sm:px-6 lg:px-8"
       id="about"
     >
       <div className="max-w-4xl mx-auto">
+        {/* Heading */}
         <motion.h2 
           className="text-4xl sm:text-5xl font-extrabold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-emerald-300 to-emerald-600"
           initial={{ opacity: 0, y: -20 }}
@@ -38,6 +39,7 @@ const About: React.FC = () => {
           About Me
         </motion.h2>
         
+        {/* Profile */}
         <div className="flex flex-col sm:flex-row items-center mb-12">
           <motion.img
             src={profile}
@@ -67,6 +69,18 @@ const About: React.FC = () => {
           </div>
         </div>
 
+          <div className="flex justify-end p-4 rounded-lg shadow-lg">
+            <a
+              href="https://drive.google.com/file/d/1Krxp4w_qM3iqQSfuQJVI43a1RUB1SZDX/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center text-sm gap-2 px-4 py-2 bg-emerald-600 text-white rounded hover:bg-emerald-700 transition-colors"
+            >
+              <span className="font-semibold">Resume.pdf</span>
+            </a>
+          </div>
+
+        {/* Timeline */}
         <div className="space-y-12">
           <TimelineItem title="Technical Skills">
             <p className="text-gray-300">
@@ -77,7 +91,7 @@ const About: React.FC = () => {
           <TimelineItem title="Professional Experience">
             <h4 className="font-semibold text-emerald-400 mb-2">Frontend Developer Software Engineer Intern at Inherit (April 2024 – June 2024)</h4>
             <ul className="list-disc list-inside text-gray-300 space-y-1">
-              <li>Developed user interfaces for financial technology platforms</li>
+              <li>Developed user interfaces for Inherit financial technology platform</li>
               <li>Participated in code reviews and debugging sessions</li>
               <li>Collaborated with design and backend teams</li>
               <li>Utilized ReactJS, TypeScript, and RESTful APIs</li>
@@ -94,6 +108,8 @@ const About: React.FC = () => {
           </TimelineItem>
         </div>
 
+
+        {/* Contact Section */}
         <motion.div 
           className="mt-12 text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -114,6 +130,8 @@ const About: React.FC = () => {
             Get in Touch
           </Link>
         </motion.div>
+       
+
       </div>
     </section>
   );

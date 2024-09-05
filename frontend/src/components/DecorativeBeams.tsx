@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "../utils/cn";
 
-export const BackgroundBeams = React.memo(
+export const DecorativeBeams = React.memo(
   ({ className }: { className?: string }) => {
     const paths = [
       "M-380 -189C-380 -189 -312 216 152 343C616 470 684 875 684 875",
@@ -137,4 +137,4 @@ export const BackgroundBeams = React.memo(
   }
 );
 
-BackgroundBeams.displayName = "BackgroundBeams";
+DecorativeBeams.displayName = "DecorativeBeams";

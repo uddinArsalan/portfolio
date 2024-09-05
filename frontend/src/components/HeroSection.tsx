@@ -1,5 +1,5 @@
 import { Link } from "react-scroll";
-import { BackgroundBeams } from "./BackgroundBeams";
+import { DecorativeBeams } from "./DecorativeBeams";
 import {motion} from "framer-motion";
 
 interface SocialLinkProps {
@@ -18,15 +18,15 @@ const SocialLink: React.FC<SocialLinkProps> = ({ href, icon }) => (
   </a>
 );
 
-const Background: React.FC = () => {
+const HeroSection = () => {
   return (
-    <header className="relative flex justify-center items-center text-white min-h-screen">
-      <div className="absolute inset-0 bg-neutral-950">
-        <BackgroundBeams />
+    <header className="relative flex flex-col justify-center items-center text-white min-h-screen p-4 sm:p-8">
+      <div className="absolute inset-0 bg-neutral-950 overflow-hidden">
+        <DecorativeBeams />
       </div>
-      <div className="relative z-10 flex flex-col gap-8 justify-center items-center text-center px-4">
+      <div className="relative z-10 flex flex-col gap-6 justify-center items-center text-center max-w-screen-lg mx-auto">
         <motion.h1 
-          className="font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600"
+          className="font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -43,13 +43,13 @@ const Background: React.FC = () => {
             spy={true}
             smooth={true}
             duration={1000}
-            className="inline-block px-6 py-3 text-lg font-bold text-white bg-gradient-to-br from-emerald-600 to-emerald-800 hover:from-emerald-700 hover:to-emerald-900 cursor-pointer rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="inline-block px-4 py-2 text-lg font-bold text-white bg-gradient-to-br from-emerald-600 to-emerald-800 hover:from-emerald-700 hover:to-emerald-900 cursor-pointer rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Get Started
           </Link>
         </motion.div>
         <motion.div 
-          className="flex gap-8 text-4xl sm:text-5xl"
+          className="flex gap-6 text-2xl sm:text-3xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
@@ -63,7 +63,7 @@ const Background: React.FC = () => {
   );
 };
 
-export default Background;
+export default HeroSection;
 
 // const Background = () => {
 //   return (

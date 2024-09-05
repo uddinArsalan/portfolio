@@ -40,7 +40,6 @@ const GET_USER_BLOGS = `{
 const resolvers = {
   Query: {
     publication: async (_, { host }) => {
-      // Make an HTTP GET request to an external API
       try {
         const response = await axios.post(
           `https://gql.hashnode.com`,
@@ -52,7 +51,6 @@ const resolvers = {
           }
         );
         console.log("Server")
-        // Access and return only the "edges" array from the response data
         const userData = response.data.data;
         console.log(userData);
         return {
@@ -72,7 +70,7 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   cors: {
-    origin: "*", // Replace "*" with the specific origins you want to allow
+    origin: "*", 
     methods: "GET,POST",
     allowedHeaders: ["Content-Type"],
   },
