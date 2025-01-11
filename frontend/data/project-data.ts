@@ -38,9 +38,9 @@ export const Projects: Project[] = [
         id : 3,
         name: "DYNAMICOG",
         description: "A full-stack application for dynamic OG image generation, allowing users to create personalized OG images based on their input. Secure user authentication using JWT and efficient data storage with MongoDB and Mongoose.",
-        project_link: "",
+        project_link: "https://dynamic-og-alpha.vercel.app/",
         imgSrc: DynamicOg,
-        technologies: ["React.js", "TypeScript", "Tailwind CSS", "MongoDB", "JWT", "Mongoose"]
+        technologies: ["React.js", "TypeScript", "Zustand","Tailwind CSS", "MongoDB", "JWT", "Mongoose"]
     },
     {
         id: 4,
