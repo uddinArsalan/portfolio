@@ -71,7 +71,7 @@ const About = () => {
 
           <div className="flex justify-end p-4 rounded-lg shadow-lg">
             <a
-              href="https://drive.google.com/file/d/1Krxp4w_qM3iqQSfuQJVI43a1RUB1SZDX/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1gdiponeuw1rR8zsM3Oa4SAROsIANVcgv/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center text-sm gap-2 px-4 py-2 bg-emerald-600 text-white rounded hover:bg-emerald-700 transition-colors"

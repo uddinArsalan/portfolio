@@ -76,6 +76,24 @@ export const Projects: Project[] = [
   },
   {
     id: 4,
+    name: "DYNAMICOG",
+    description:
+      "A full-stack application for dynamic OG image generation, allowing users to create personalized OG images with secure authentication using JWT and efficient data storage with MongoDB and Mongoose.",
+    project_link: "https://dynamic-og-alpha.vercel.app/",
+    imgSrc: DynamicOg,
+    technologies: [
+      "React.js",
+      "TypeScript",
+      "Vercel/Og",
+      "Zustand",
+      "Tailwind CSS",
+      "MongoDB",
+      "JWT",
+      "Mongoose",
+    ],
+  },
+  {
+    id: 5,
     name: "SHOPSTREAM",
     description:
       "A full-stack e-commerce platform built with server-side rendering for SEO and secure user authentication using jose for JWT handling. MongoDB is used for managing product and user data.",
@@ -90,7 +108,7 @@ export const Projects: Project[] = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     name: "THREAD IT",
     description:
       "An innovative application that converts blogs into Twitter threads, offering one-click sharing for content creators. It integrates Firebase authentication and the Twitter API for a seamless experience.",
@@ -105,23 +123,6 @@ export const Projects: Project[] = [
       "GraphQL",
       "Firebase",
       "Cheerio",
-    ],
-  },
-  {
-    id: 6,
-    name: "DYNAMICOG",
-    description:
-      "A full-stack application for dynamic OG image generation, allowing users to create personalized OG images with secure authentication using JWT and efficient data storage with MongoDB and Mongoose.",
-    project_link: "https://dynamic-og-alpha.vercel.app/",
-    imgSrc: DynamicOg,
-    technologies: [
-      "React.js",
-      "TypeScript",
-      "Zustand",
-      "Tailwind CSS",
-      "MongoDB",
-      "JWT",
-      "Mongoose",
     ],
   },
   {
