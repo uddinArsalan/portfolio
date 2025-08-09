@@ -9,7 +9,7 @@ interface TimelineItemProps {
 
 const TimelineItem: React.FC<TimelineItemProps> = ({ title, children }) => {
   return (
-    <motion.div 
+    <motion.div
       className="relative pl-8 border-l-2 border-emerald-500"
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
@@ -29,8 +29,7 @@ const About = () => {
       id="about"
     >
       <div className="max-w-4xl mx-auto">
-        {/* Heading */}
-        <motion.h2 
+        <motion.h2
           className="text-4xl sm:text-5xl font-extrabold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-emerald-300 to-emerald-600"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -38,8 +37,7 @@ const About = () => {
         >
           About Me
         </motion.h2>
-        
-        {/* Profile */}
+
         <div className="flex flex-col sm:flex-row items-center mb-12">
           <motion.img
             src={profile}
@@ -50,7 +48,7 @@ const About = () => {
             transition={{ duration: 0.5 }}
           />
           <div>
-            <motion.h3 
+            <motion.h3
               className="text-3xl sm:text-4xl font-bold mb-4"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -58,59 +56,69 @@ const About = () => {
             >
               Hello, I'm <span className="text-emerald-400">ARSALAN</span>
             </motion.h3>
-            <motion.p 
+            <motion.p
               className="text-lg text-gray-300"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              A passionate frontend developer specializing in creating intuitive and efficient user interfaces.
+              I'm a full-stack developer with a focus on building performant, scalable, and user-friendly web
+              applications. I specialize in React.js, Next.js, and modern backend technologies, with experience
+              in delivering production-ready features for startups and learning-driven personal projects.
+              Beyond project work,I actively strengthen problem-solving skills through regular practice on LeetCode (~700 problems across varied topics).
             </motion.p>
           </div>
         </div>
 
-          <div className="flex justify-end p-4 rounded-lg shadow-lg">
-            <a
-              href="https://drive.google.com/file/d/1gdiponeuw1rR8zsM3Oa4SAROsIANVcgv/view?usp=drive_link"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center text-sm gap-2 px-4 py-2 bg-emerald-600 text-white rounded hover:bg-emerald-700 transition-colors"
-            >
-              <span className="font-semibold">Resume.pdf</span>
-            </a>
-          </div>
+        <div className="flex justify-end p-4 rounded-lg shadow-lg">
+          <a
+            href="https://drive.google.com/file/d/1h23XMdfvcwpb6SJwU0BLV-G_Bo5is89X/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center text-sm gap-2 px-4 py-2 bg-emerald-600 text-white rounded hover:bg-emerald-700 transition-colors"
+          >
+            <span className="font-semibold">Resume.pdf</span>
+          </a>
+        </div>
 
-        {/* Timeline */}
         <div className="space-y-12">
           <TimelineItem title="Technical Skills">
             <p className="text-gray-300">
-              Proficient in: Next.js, React.js, TypeScript, JavaScript, Node.js, Tailwind CSS, GraphQL, PostgreSQL, HTML, CSS
+              JavaScript (ES6+), TypeScript, Go, React.js, Next.js, Node.js, SvelteKit, Tailwind CSS, GraphQL,
+              PostgreSQL, MongoDB, Redis, Prisma, Zustand, REST APIs, Firebase, Supabase.
             </p>
           </TimelineItem>
 
           <TimelineItem title="Professional Experience">
-            <h4 className="font-semibold text-emerald-400 mb-2">Frontend Developer Software Engineer Intern at Inherit (April 2024 – June 2024)</h4>
+            <h4 className="font-semibold text-emerald-400 mb-2">
+              Frontend Developer – NatureDots (June 2025 – Present)
+            </h4>
             <ul className="list-disc list-inside text-gray-300 space-y-1">
-              <li>Developed user interfaces for Inherit financial technology platform</li>
-              <li>Participated in code reviews and debugging sessions</li>
-              <li>Collaborated with design and backend teams</li>
-              <li>Utilized ReactJS, TypeScript, and RESTful APIs</li>
+              <li>Built a scalable data visualization dashboard in React.js, improving data rendering speed by ~40%.</li>
+              <li>Refactored frontend into 15+ reusable components, reducing code duplication by 25%.</li>
+            </ul>
+
+            <h4 className="font-semibold text-emerald-400 mt-4 mb-2">
+              Full Stack Developer Intern – Inherit (April 2024 – June 2024)
+            </h4>
+            <ul className="list-disc list-inside text-gray-300 space-y-1">
+              <li>Developed a secure fintech dashboard with OTP authentication and S3-based document handling.</li>
+              <li>Implemented a calendar-based slot booking system with React & TypeScript, maintaining 95+ mobile Lighthouse score.</li>
             </ul>
           </TimelineItem>
 
           <TimelineItem title="Key Projects">
             <ul className="list-disc list-inside text-gray-300 space-y-1">
-              <li>InterViewMate: Next.js, TypeScript, Tailwind, Three.js, Supabase</li>
-              <li>Thread It: React.js, TypeScript, Node.js, Twitter API, Firebase</li>
-              <li>SketchSync: React.js, TypeScript, Canvas API, Firebase</li>
-              <li>Personal Portfolio: React.js, Tailwind CSS, GraphQL</li>
+              <li>Distributed URL Shortener – Go, Redis, PostgreSQL, SvelteKit, Keycloak</li>
+              <li>InterViewMate – Next.js, TypeScript, Tailwind, Three.js, Supabase</li>
+              <li>Truview – Next.js, Prisma, PostgreSQL, Auth0, Cloudflare CDN</li>
+              <li>PRODO – Next.js 15, Zustand, TanStack Query, PostgreSQL</li>
+              <li>DynamicOG – React.js, MongoDB, JWT</li>
             </ul>
           </TimelineItem>
         </div>
 
-
-        {/* Contact Section */}
-        <motion.div 
+        <motion.div
           className="mt-12 text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -118,7 +126,8 @@ const About = () => {
         >
           <h3 className="text-2xl font-bold mb-4 text-emerald-400">Let's Connect</h3>
           <p className="text-gray-300 mb-6">
-            I'm passionate about creating impactful web applications and always open to new opportunities. Let's discuss how we can collaborate on innovative projects.
+            I enjoy solving real-world problems through code and am always open to collaborations on innovative projects.
+            Feel free to reach out if you’d like to work together.
           </p>
           <Link
             to="contact"
@@ -130,8 +139,6 @@ const About = () => {
             Get in Touch
           </Link>
         </motion.div>
-       
-
       </div>
     </section>
   );

@@ -8,6 +8,7 @@ import Truview from "/assets/Truview.png";
 import Shopstream from "/assets/Shopstream.png";
 import DynamicOg from "/assets/DynamicOg.png";
 import Prodo from "/assets/Prodo.png";
+import UrlShortenerImg from "/assets/linkly.png";
 
 export interface Project {
   id: number;
@@ -20,10 +21,19 @@ export interface Project {
 
 export const Projects: Project[] = [
   {
-    id: 1,
+    id: 11,
+    name: "DISTRIBUTED URL SHORTENER",
+    description:
+      "A scalable link-shortening service built with Go, Redis, and PostgreSQL. Designed for high-performance lookups with Redis caching, secure authentication via Keycloak, and analytics tracking. Includes a SvelteKit-based dashboard for managing links, and viewing usage stats.",
+    project_link: "https://lnklyweb.vercel.app/",
+    imgSrc: UrlShortenerImg,
+    technologies: ["Go", "Redis", "PostgreSQL", "SvelteKit", "Keycloak"],
+  },
+  {
+    id: 2,
     name: "INTERVIEWMATE",
     description:
-      "An AI-powered interview preparation platform offering personalized practice sessions with real-time feedback and immersive 3D visuals. Supabase is used for authentication and PostgreSQL for data management.",
+      "An AI-driven interview practice platform with feedback. Integrated Cohere API for dynamic question generation, Supabase for secure authentication, and PostgreSQL for data storage. Includes immersive 3D visual elements for an engaging user experience.",
     project_link: "https://interview-mate-one.vercel.app/",
     imgSrc: InterviewMate,
     technologies: [
@@ -37,10 +47,10 @@ export const Projects: Project[] = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     name: "PRODO",
     description:
-      "A modern task management application built with Next.js 15, featuring a robust PostgreSQL database (Neon DB) with Drizzle ORM for efficient data handling. It offers seamless state management with Zustand and optimized data fetching with TanStack Query. The UI is crafted with Tailwind CSS, React, and ShadCN UI, while secure JWT authentication ensures smooth user experiences. Built with TypeScript, PRODO is designed for scalability and performance.",
+      "A task management application with secure JWT authentication, built on Next.js 15 and PostgreSQL (Neon DB) using Drizzle ORM. Features optimized state handling with Zustand and data fetching via TanStack Query. Designed responsive UI components with Tailwind CSS and ShadCN UI.",
     project_link: "https://prodo-task.vercel.app/",
     imgSrc: Prodo,
     technologies: [
@@ -58,10 +68,10 @@ export const Projects: Project[] = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     name: "TRUVIEW",
     description:
-      "Share your cherished memories effortlessly, engaging with likes and comments for meaningful connections. Built with a robust tech stack for smooth performance and secure data management.",
+      "A social media platform supporting infinite scrolling feeds, real-time updates, and media uploads. Implemented authentication via Auth0, optimized file handling with Backblaze + Cloudflare CDN, and managed relational data with Prisma and PostgreSQL.",
     project_link: "https://truview-one.vercel.app/",
     imgSrc: Truview,
     technologies: [
@@ -75,10 +85,10 @@ export const Projects: Project[] = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     name: "DYNAMICOG",
     description:
-      "A full-stack application for dynamic OG image generation, allowing users to create personalized OG images with secure authentication using JWT and efficient data storage with MongoDB and Mongoose.",
+      "A web app that generates dynamic Open Graph images from user input. Features JWT-based authentication, MongoDB storage with Mongoose, and a responsive interface built with React and Tailwind CSS.",
     project_link: "https://dynamic-og-alpha.vercel.app/",
     imgSrc: DynamicOg,
     technologies: [
@@ -86,6 +96,8 @@ export const Projects: Project[] = [
       "TypeScript",
       "Vercel/Og",
       "Zustand",
+      "Express.js",
+      "Node.js",
       "Tailwind CSS",
       "MongoDB",
       "JWT",
@@ -93,10 +105,10 @@ export const Projects: Project[] = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     name: "SHOPSTREAM",
     description:
-      "A full-stack e-commerce platform built with server-side rendering for SEO and secure user authentication using jose for JWT handling. MongoDB is used for managing product and user data.",
+      "A full-stack e-commerce platform with secure JWT handling via jose, server-side rendering for SEO, and MongoDB for product and user data. Built with a focus on performance and secure data flows.",
     project_link: "https://shopstream.vercel.app/",
     imgSrc: Shopstream,
     technologies: [
@@ -108,10 +120,10 @@ export const Projects: Project[] = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     name: "THREAD IT",
     description:
-      "An innovative application that converts blogs into Twitter threads, offering one-click sharing for content creators. It integrates Firebase authentication and the Twitter API for a seamless experience.",
+      "A tool that converts blog content (Hashnode) into Twitter threads for one-click posting. Uses the Twitter API for publishing, Firebase for authentication, and GraphQL for efficient data handling. Includes HTML parsing with Cheerio.",
     project_link: "https://thread-it-one.vercel.app/",
     imgSrc: ThreadIt,
     technologies: [
@@ -126,19 +138,19 @@ export const Projects: Project[] = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     name: "SKETCH SYNC",
     description:
-      "A real-time collaborative drawing platform that leverages the Canvas API for drawing and Firebase for data synchronization and user authentication, featuring social sharing and a community gallery.",
+      "A collaborative drawing platform that synchronizes artwork in real time using Firebase. Built with the Canvas API for drawing features and Firebase authentication for secure user sessions.",
     project_link: "https://sketchsync.vercel.app/",
     imgSrc: Sketchsync,
     technologies: ["React.js", "TypeScript", "CSS", "Canvas API", "Firebase"],
   },
   {
-    id: 8,
+    id: 9,
     name: "BEYOND SKILL",
     description:
-      "Unlock your potential with Beyond Skill's wide range of courses, offering an engaging learning experience with secure payment processing and interactive content.",
+      "An e-learning platform featuring secure payments with Stripe and interactive course content. Built with React.js and Express.js, styled using Tailwind CSS.",
     project_link: "https://beyondskill.vercel.app/",
     imgSrc: BeyondSkill,
     technologies: [
@@ -150,19 +162,19 @@ export const Projects: Project[] = [
     ],
   },
   {
-    id: 9,
+    id: 10,
     name: "ADDICTSY",
     description:
-      "Empowering Addiction Recovery through Personal Chats. Connect with supportive communities via real-time messaging and an intuitive user interface.",
+      "A community-based platform for addiction recovery, featuring private chats powered by Talk JS API. Includes real-time messaging and a user-friendly interface built with React.js and Tailwind CSS.",
     project_link: "https://addictsy.vercel.app/",
     imgSrc: Addictsy,
     technologies: ["React.js", "TypeScript", "Tailwind CSS", "Talk JS API"],
   },
   {
-    id: 10,
+    id: 11,
     name: "FLIX NEST",
     description:
-      "Explore and bookmark upcoming movies and trailers with Flix Nest, an engaging platform powered by the TMDB API for movie data.",
+      "A movie discovery platform using the TMDB API to fetch and display upcoming movies and trailers. Users can bookmark favorites for later viewing.",
     project_link: "https://flixnest.vercel.app/",
     imgSrc: Flixnest,
     technologies: ["JavaScript", "CSS", "HTML", "TMDB API"],
