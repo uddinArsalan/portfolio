@@ -1,5 +1,3 @@
-import React from "react";
-
 function NodejsLogo({ width = "", height = "", className = "" }) {
   return (
     <svg

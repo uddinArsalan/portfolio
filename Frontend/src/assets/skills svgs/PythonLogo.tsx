@@ -1,5 +1,3 @@
-import React from "react";
-
 function PythonLogo({ width = "", height = "", className = "" }) {
   return (
     <svg

@@ -1,5 +1,3 @@
-import React from "react";
-
 function ZustandLogo({ width = "", height = "", className = "" }) {
   return (
     <svg

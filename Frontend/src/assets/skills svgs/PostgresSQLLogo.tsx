@@ -1,5 +1,3 @@
-import React from "react";
-
 function PostgresSQLLogo({width = "", height = "", className = ""}) {
   return (
     <svg

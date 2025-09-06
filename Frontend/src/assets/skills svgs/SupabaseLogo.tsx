@@ -1,5 +1,3 @@
-import React from "react";
-
 function SupabaseLogo({ width = "", height = "", className = "" }) {
   return (
     <svg

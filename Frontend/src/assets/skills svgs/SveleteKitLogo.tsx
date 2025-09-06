@@ -1,5 +1,3 @@
-import React from "react";
-
 function SveleteKitLogo({ width = "", height = "", className = "" }) {
   return (
     <svg

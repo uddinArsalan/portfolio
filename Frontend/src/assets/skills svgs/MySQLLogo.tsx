@@ -1,5 +1,3 @@
-import React from "react";
-
 function MySQLLogo({ width = "", height = "", className = "" }) {
   return (
     <svg

@@ -1,5 +1,3 @@
-import React from "react";
-
 function SWRLogo({ height = "", width = "", className = "" }) {
   return (
     <svg

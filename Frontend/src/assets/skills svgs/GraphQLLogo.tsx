@@ -1,5 +1,3 @@
-import React from "react";
-
 function GraphQLLogo({ width = "", height = "", className = "" }) {
   return (
     <svg

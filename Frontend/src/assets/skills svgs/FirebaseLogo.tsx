@@ -1,5 +1,3 @@
-import React from "react";
-
 function FirebaseLogo({ width = "", height = "", className = "" }) {
   return (
     <svg

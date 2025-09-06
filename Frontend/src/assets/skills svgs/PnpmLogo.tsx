@@ -1,5 +1,3 @@
-import React from "react";
-
 const PnpmLogo = ({ width = "", height = "", className = "" }) => {
   return (
     <svg

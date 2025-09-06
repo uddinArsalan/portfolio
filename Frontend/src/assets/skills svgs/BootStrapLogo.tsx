@@ -1,5 +1,3 @@
-import React from "react";
-
 function BootStrapLogo({ width = "", height = "", className = "" }) {
   return (
     <svg

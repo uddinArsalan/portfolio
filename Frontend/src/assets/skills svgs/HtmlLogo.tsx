@@ -1,5 +1,3 @@
-import React from "react";
-
 function HtmlLogo({ width = "", height = "", className = "" }) {
   return (
     <svg

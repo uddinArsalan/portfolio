@@ -1,5 +1,3 @@
-import React from "react";
-
 function MongodbLogo({ width = "", height = "", className = "" }) {
   return (
     <svg

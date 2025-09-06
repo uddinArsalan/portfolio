@@ -1,5 +1,3 @@
-import React from "react";
-
 function RedisLogo({ width = "", height = "", className = "" }) {
   return (
     <svg

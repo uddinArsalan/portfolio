@@ -1,5 +1,3 @@
-import React from "react";
-
 function CSSLogo({ width = "", height = "", className = "" }) {
   return (
     <svg

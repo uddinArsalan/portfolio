@@ -1,5 +1,3 @@
-import React from "react";
-
 function GoLogo({ width = "", height = "", className = "" }) {
   return (
     <svg

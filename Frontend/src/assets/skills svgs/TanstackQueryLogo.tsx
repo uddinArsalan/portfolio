@@ -1,5 +1,3 @@
-import React from "react";
-
 function TanstackQueryLogo({ height = "", width = "", className = "" }) {
   return (
     <svg

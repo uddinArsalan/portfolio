@@ -1,5 +1,3 @@
-import React from "react";
-
 const NpmLogo = ({ width = "", height = "", className = "" }) => {
   return (
     <svg

@@ -1,5 +1,3 @@
-import React from "react";
-
 function NextjsLogo({ width = "", height = "", className = "" }) {
   return (
     <svg

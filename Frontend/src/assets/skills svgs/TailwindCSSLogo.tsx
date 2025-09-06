@@ -1,5 +1,3 @@
-import React from "react";
-
 function TailwindCSSLogo({ width = "", height = "", className = "" }) {
   return (
     <svg

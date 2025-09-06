@@ -1,5 +1,3 @@
-import React from "react";
-
 function GitLogo({ width = "", height = "", className = "" }) {
   return (
     <svg
