@@ -4,10 +4,10 @@ import "./index.css";
 import { useState } from "react";
 
 function App() {
-  const [showSidebar,setShowSidebar] = useState<boolean>(false);
+  const [showSidebar, setShowSidebar] = useState<boolean>(false);
   return (
     <div className="grid grid-cols-4">
-      <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar}/>
+      <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
       <Main />
     </div>
   );

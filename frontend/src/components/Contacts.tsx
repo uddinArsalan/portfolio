@@ -2,9 +2,14 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { useEffect, useState } from "react";
 import { useForm, ValidationError } from '@formspree/react';
 import Modal from './Modal';
+
 const Contacts = () => {
-  const [state, handleSubmit] = useForm("mwkdzvdb");
+  const formId = import.meta.env.VITE_FORMSPREE_ID;
+  const recaptchaSiteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
+  const [state, handleSubmit] = useForm(formId);
   const [open, setOpen] = useState<boolean>(false);
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+  const [recaptchaError, setRecaptchaError] = useState<string>('');
 
   useEffect(() => {
     if (state.succeeded) setOpen(true);
@@ -12,9 +17,31 @@ const Contacts = () => {
 
   const closeModal = () => setOpen(prev => !prev);
 
+  const handleRecaptchaChange = (token: string | null) => {
+    setRecaptchaToken(token);
+    if (token) {
+      setRecaptchaError('');
+    }
+  };
+
+  const handleFormSubmit = async (event: any) => {
+    event.preventDefault();
+
+    if (!recaptchaToken) {
+      setRecaptchaError('Please complete the reCAPTCHA verification');
+      return;
+    }
+
+    const form = event.target as HTMLFormElement;
+    const formData = new FormData(form);
+    formData.append('g-recaptcha-response', recaptchaToken);
+
+    handleSubmit(event);
+  };
+
   return (
     <>
-     <div className={open ? 'fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50' : 'hidden'}>
+      <div className={open ? 'fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50' : 'hidden'}>
         <Modal closeModal={closeModal} />
       </div>
       <div
@@ -25,7 +52,7 @@ const Contacts = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-emerald-300 to-emerald-600">
             Contact Me
           </h2>
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleFormSubmit} className="space-y-6">
             <div>
               <label htmlFor="name" className="block text-emerald-400 text-sm font-bold mb-2">Name</label>
               <input
@@ -39,6 +66,7 @@ const Contacts = () => {
               />
               <ValidationError prefix="Name" field="name" errors={state.errors} />
             </div>
+
             <div>
               <label htmlFor="email" className="block text-emerald-400 text-sm font-bold mb-2">Email</label>
               <input
@@ -52,6 +80,7 @@ const Contacts = () => {
               />
               <ValidationError prefix="Email" field="email" errors={state.errors} />
             </div>
+
             <div>
               <label htmlFor="subject" className="block text-emerald-400 text-sm font-bold mb-2">Subject</label>
               <input
@@ -65,6 +94,7 @@ const Contacts = () => {
               />
               <ValidationError prefix="Subject" field="subject" errors={state.errors} />
             </div>
+
             <div>
               <label htmlFor="message" className="block text-emerald-400 text-sm font-bold mb-2">Message</label>
               <textarea
@@ -77,17 +107,24 @@ const Contacts = () => {
               />
               <ValidationError prefix="Message" field="message" errors={state.errors} />
             </div>
-            
-            <ReCAPTCHA
-              sitekey={"6LcnBu4oAAAAAJT2zNV3pVHXKIlL6haBuBE1h0sm"}
-              className="flex items-center m-0 h-fit"
-            />
+
+            <div>
+              <ReCAPTCHA
+                sitekey={recaptchaSiteKey}
+                onChange={handleRecaptchaChange}
+                className="flex items-center m-0 h-fit"
+              />
+              {recaptchaError && (
+                <p className="text-red-400 text-sm mt-2">{recaptchaError}</p>
+              )}
+            </div>
+
             <button
-              className="w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-md transition-colors duration-300"
+              className="w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-md transition-colors duration-300 disabled:opacity-50"
               type="submit"
-              disabled={state.submitting || open}
+              disabled={state.submitting || open || !recaptchaToken}
             >
-              Submit
+              {state.submitting ? 'Submitting...' : 'Submit'}
             </button>
           </form>
         </div>
