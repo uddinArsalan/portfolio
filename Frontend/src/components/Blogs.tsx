@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { useQuery, gql } from "@apollo/client";
 
 interface BlogTypes {
@@ -7,12 +7,12 @@ interface BlogTypes {
   publishedAt: string;
   url: string;
   coverImage: {
-    url: string
+    url: string;
   };
 }
 
 interface Node {
-  node: BlogTypes
+  node: BlogTypes;
 }
 
 const GET_USER_BLOGS = gql`
@@ -60,16 +60,19 @@ const dateFormatter = (originalTimestamp: string): string => {
     hour: "numeric",
     minute: "numeric",
     hour12: true,
-    timeZone: "UTC"
+    timeZone: "UTC",
   }).format(date);
-}
+};
 
 const Blogs: React.FC = () => {
   const { loading, data } = useQuery(GET_USER_BLOGS);
   const articles: Node[] = loading ? [] : data?.publication?.posts?.edges || [];
 
   return (
-    <div className="bg-gradient-to-b from-black to-neutral-900 py-16 px-4 sm:px-6 lg:px-8" id="blogs">
+    <div
+      className="bg-gradient-to-b from-black to-neutral-900 py-16 px-4 sm:px-6 lg:px-8"
+      id="blogs"
+    >
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-emerald-300 to-emerald-600">
           Blogs
@@ -82,14 +85,24 @@ const Blogs: React.FC = () => {
                   key={article.node.title}
                   className="bg-neutral-800 rounded-lg overflow-hidden shadow-lg hover:shadow-emerald-500/20 transition-shadow duration-300 flex flex-col"
                 >
-                  <img src={article.node.coverImage.url} alt="" className="w-full h-48 object-cover" />
+                  <img
+                    src={article.node.coverImage.url}
+                    alt=""
+                    className="w-full h-48 object-cover"
+                  />
                   <div className="p-6 flex flex-col flex-grow">
-                    <h3 className="text-xl font-bold text-emerald-400 mb-2">{article.node.title}</h3>
-                    <p className="text-gray-300 mb-4 flex-grow line-clamp-3">{article.node.brief}</p>
-                    <p className="text-emerald-300 text-sm mb-4">{dateFormatter(article.node.publishedAt)}</p>
-                    <a 
-                      href={article.node.url} 
-                      target="_blank" 
+                    <h3 className="text-xl font-bold text-emerald-400 mb-2">
+                      {article.node.title}
+                    </h3>
+                    <p className="text-gray-300 mb-4 flex-grow line-clamp-3">
+                      {article.node.brief}
+                    </p>
+                    <p className="text-emerald-300 text-sm mb-4">
+                      {dateFormatter(article.node.publishedAt)}
+                    </p>
+                    <a
+                      href={article.node.url}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-emerald-400 hover:text-emerald-300 mt-auto"
                     >

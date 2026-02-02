@@ -20,7 +20,7 @@ const ProjectSection: React.FC = () => {
               controls.start("hidden");
             }
           },
-          { threshold: 0.2 }
+          { threshold: 0.2 },
         );
 
         observer.observe(element);
@@ -44,7 +44,7 @@ const ProjectSection: React.FC = () => {
         {Projects.map(
           (
             { id, name, description, imgSrc, project_link, technologies },
-            index
+            index,
           ) => (
             <motion.div
               className="mb-12 last:mb-0"
@@ -90,7 +90,7 @@ const ProjectSection: React.FC = () => {
                 </div>
               </a>
             </motion.div>
-          )
+          ),
         )}
       </div>
     </div>

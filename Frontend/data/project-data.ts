@@ -21,8 +21,28 @@ export interface Project {
 
 export const Projects: Project[] = [
   {
+    id: 12,
+    name: "ASKDOC",
+    description:
+      "An AI-powered document Q&A platform built with Golang, designed for scalable and secure document ingestion and querying. Uses JWT-based authentication (access + refresh tokens), Redis-backed background workers with goroutines for document chunking, Qdrant as a vector database for semantic search, and Cohere API for intelligent answer generation. Supports secure file storage with Backblaze S3 using presigned URLs.",
+    project_link: "https://github.com/uddinArsalan/File_Analyzer",
+    imgSrc: "",
+    technologies: [
+      "Golang",
+      "Redis",
+      "JWT",
+      "Qdrant",
+      "Cohere API",
+      "Backblaze S3",
+      "SQL",
+      "Goroutines",
+      "Background Workers",
+      "Vector Search",
+    ],
+  },
+  {
     id: 11,
-    name: "DISTRIBUTED URL SHORTENER",
+    name: "URL SHORTENER",
     description:
       "A scalable link-shortening service built with Go, Redis, and PostgreSQL. Designed for high-performance lookups with Redis caching, secure authentication via Keycloak, and analytics tracking. Includes a SvelteKit-based dashboard for managing links, and viewing usage stats.",
     project_link: "https://lnklyweb.vercel.app/",

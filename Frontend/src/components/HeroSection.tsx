@@ -1,6 +1,6 @@
 import { Link } from "react-scroll";
 import { DecorativeBeams } from "./DecorativeBeams";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 
 interface SocialLinkProps {
   href: string;
@@ -8,9 +8,9 @@ interface SocialLinkProps {
 }
 
 const SocialLink: React.FC<SocialLinkProps> = ({ href, icon }) => (
-  <a 
-    href={href} 
-    target="_blank" 
+  <a
+    href={href}
+    target="_blank"
     rel="noopener noreferrer"
     className="text-gray-400 hover:text-white transition-colors duration-300"
   >
@@ -25,7 +25,7 @@ const HeroSection = () => {
         <DecorativeBeams />
       </div>
       <div className="relative z-10 flex flex-col gap-6 justify-center items-center text-center max-w-screen-lg mx-auto">
-        <motion.h1 
+        <motion.h1
           className="font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -48,15 +48,24 @@ const HeroSection = () => {
             Get Started
           </Link>
         </motion.div>
-        <motion.div 
+        <motion.div
           className="flex gap-6 text-2xl sm:text-3xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <SocialLink href="https://twitter.com/Arsalan_0101" icon="fa-brands fa-square-x-twitter" />
-          <SocialLink href="https://github.com/uddinArsalan" icon="fa-brands fa-github" />
-          <SocialLink href="https://www.linkedin.com/in/arsalan-uddin-2356b81b9" icon="fa-brands fa-linkedin" />
+          <SocialLink
+            href="https://twitter.com/Arsalan_0101"
+            icon="fa-brands fa-square-x-twitter"
+          />
+          <SocialLink
+            href="https://github.com/uddinArsalan"
+            icon="fa-brands fa-github"
+          />
+          <SocialLink
+            href="https://www.linkedin.com/in/arsalan-uddin-2356b81b9"
+            icon="fa-brands fa-linkedin"
+          />
         </motion.div>
       </div>
     </header>
