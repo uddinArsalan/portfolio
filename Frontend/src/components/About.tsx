@@ -62,21 +62,25 @@ const About = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              I'm a full-stack developer currently working at NatureDots, where
-              I build performant data visualization platforms and scalable React
-              applications. I specialize in React.js, Next.js, and modern
-              backend technologies like Go and Node.js, with hands-on experience
-              delivering production features that improve performance and user
-              experience. I also actively sharpen my problem-solving skills with
-              900+ LeetCode problems solved across arrays,strings, graphs,
-              trees, and dynamic programming.
+              I'm a frontend-focused full-stack developer currently working at
+              NatureDots, where I build production data visualization platforms
+              — interactive maps, GeoTIFF raster rendering, real-time sensor
+              graphs, and large file upload flows across a multi-repo
+              aquaculture monitoring product. Beyond frontend, I build
+              backend-heavy projects in Go — most recently a document Q&A
+              platform with a full RAG pipeline, Redis Streams worker, SSE-based
+              real-time status, and production auth with token lifecycle
+              management. I actively sharpen problem-solving with 900+ LeetCode
+              problems solved across arrays, graphs, trees, and dynamic
+              programming.
             </motion.p>
           </div>
         </div>
 
         <div className="flex justify-end p-4 rounded-lg shadow-lg">
           <a
-            href="https://drive.google.com/file/d/1q8UR6pE6l6B5k-LiJwT4SsjHekj8hrUx/view?usp=drive_link"
+            href="https://drive.google.com/file/d/19rC41rZeANvv_0RPILf4vevhQ48PqpWw/view?usp=drive_link"
+            download
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center text-sm gap-2 px-4 py-2 bg-emerald-600 text-white rounded hover:bg-emerald-700 transition-colors"
@@ -101,20 +105,30 @@ const About = () => {
             </h4>
             <ul className="list-disc list-inside text-gray-300 space-y-1">
               <li>
-                Developed an interactive data visualization platform with
-                multi-parameter comparison graphs for monitoring waterbodies.
+                Built and maintained client-facing aquaculture monitoring
+                platform across 4 repositories, covering interactive maps,
+                real-time sensor graphs, and multi-parameter comparison views
+                for pond and waterbody analysis.
               </li>
               <li>
-                Optimized dashboard performance, reducing load times by 40% and
-                enhancing platform stability.
+                Implemented GeoTIFF-based raster rendering to visualize
+                geospatial indices as interactive map layers for field teams.
               </li>
               <li>
-                Built an internal operations dashboard that boosted team
-                efficiency by 30%.
+                Handled large file uploads with polling-based status tracking
+                and built structured data input sections for logging operational
+                parameters.
               </li>
               <li>
-                Established a library of 15+ reusable React components, cutting
-                code duplication by 25%.
+                Translated complex Figma designs into fully responsive UIs,
+                integrated REST APIs end-to-end with structured logging, and
+                resolved critical bottlenecks cutting dashboard load times by
+                40%.
+              </li>
+              <li>
+                Built internal operations dashboard improving team efficiency by
+                30%; maintained a library of 15+ reusable React components
+                reducing code duplication by 25%.
               </li>
             </ul>
 
@@ -123,16 +137,17 @@ const About = () => {
             </h4>
             <ul className="list-disc list-inside text-gray-300 space-y-1">
               <li>
-                Redesigned fintech claim workflow with OTP security, reducing
-                process time to 2 minutes.
+                Redesigned fintech claim submission workflow with OTP-based
+                security, reducing process time to 2 minutes and improving user
+                adoption.
               </li>
               <li>
                 Built a secure document management system using React and AWS S3
-                for efficient file handling.
+                for efficient file preview and optimized downloads.
               </li>
               <li>
-                Translated Figma designs into pixel-perfect, responsive
-                dashboards across all devices.
+                Translated Figma prototypes into pixel-perfect, fully responsive
+                Agency Dashboard across all devices.
               </li>
             </ul>
           </TimelineItem>
@@ -140,23 +155,29 @@ const About = () => {
           <TimelineItem title="Key Projects">
             <ul className="list-disc list-inside text-gray-300 space-y-1">
               <li>
-                AskDoc – AI-powered document Q&A with Go, Redis, Qdrant, Cohere
-                API, JWT authentication
+                FileAnalyzer – AI document Q&A in Go with Redis Streams worker,
+                full RAG pipeline with reranking, SSE real-time status, and
+                production auth with token lifecycle
               </li>
               <li>
-                URL Shortener – Go workers, Redis streams, PostgreSQL,
-                SvelteKit, Keycloak
+                URL Shortener – Go workers consuming Redis Streams for async
+                analytics, geographic and device breakdowns on interactive maps,
+                Keycloak auth
               </li>
               <li>
-                InterViewMate – AI interview platform with Next.js, Cohere API,
-                3D visuals
+                InterViewMate – Voice-driven AI interview platform with Web
+                Speech API pause detection, Ready Player Me avatars,
+                post-interview LLM feedback report with scoring, Cohere
+                evaluation, Supabase RLS
               </li>
               <li>
-                Truview – Social media platform with Next.js, Auth0, Prisma,
-                Cloudflare CDN
+                Truview – Social media platform with optimistic updates via
+                TanStack Query, private Backblaze bucket served through
+                Cloudflare Worker proxy, Prisma social graph
               </li>
               <li>
-                PRODO – Task management with Next.js 15, Zustand, TanStack Query
+                PRODO – Task management with Next.js 15, Drizzle ORM, Zustand,
+                TanStack Query
               </li>
             </ul>
           </TimelineItem>
@@ -174,7 +195,7 @@ const About = () => {
           <p className="text-gray-300 mb-6">
             I enjoy solving real-world problems through code and am always open
             to collaborations on innovative projects. Feel free to reach out if
-            you’d like to work together.
+            you'd like to work together.
           </p>
           <Link
             to="contact"
