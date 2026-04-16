@@ -79,7 +79,7 @@ const About = () => {
 
         <div className="flex justify-end p-4 rounded-lg shadow-lg">
           <a
-            href="https://drive.google.com/file/d/19rC41rZeANvv_0RPILf4vevhQ48PqpWw/view?usp=drive_link"
+            href="https://drive.google.com/file/d/12kDFTACDSiCJE1k8gOqEeKeuqVWcCmGJ/view?usp=sharing"
             download
             target="_blank"
             rel="noopener noreferrer"
