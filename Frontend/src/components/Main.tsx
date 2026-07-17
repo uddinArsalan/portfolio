@@ -1,15 +1,15 @@
 import About from "./About";
 import Background from "./HeroSection";
-import Blogs from "./Blogs";
+// import Blogs from "./Blogs";
 import Contacts from "./Contacts";
 import ProjectSection from "./ProjectSection";
 import Skills from "./Skills";
-import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+// import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
-const client = new ApolloClient({
-  uri: "https://apollo-server-12hj.onrender.com",
-  cache: new InMemoryCache(),
-});
+// const client = new ApolloClient({
+//   uri: import.meta.env.VITE_API_URL,
+//   cache: new InMemoryCache(),
+// });
 
 const Main = () => {
   return (
@@ -17,9 +17,9 @@ const Main = () => {
       <Background />
       <About />
       <ProjectSection />
-      <ApolloProvider client={client}>
-        <Blogs />
-      </ApolloProvider>
+      {/* <ApolloProvider client={client}> */}
+        {/* <Blogs /> */}
+      {/* </ApolloProvider> */}
       <Skills />
       <Contacts />
     </div>

@@ -2,6 +2,7 @@ import axios from "axios";
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 import { typeDefs } from "./schema.js";
+import "dotenv/config"
 
 // const GET_USER_BLOGS = `{
 //   user(username : "ArsalanU") {
@@ -48,12 +49,12 @@ const resolvers = {
             headers: {
               "Content-Type": "application/json",
             },
-          }
+          },
         );
         const userData = response.data.data;
         return {
-            posts: {
-              edges : userData.publication.posts.edges
+          posts: {
+            edges: userData.publication.posts.edges,
           },
         };
       } catch (error) {
@@ -64,11 +65,13 @@ const resolvers = {
   },
 };
 
+const allowedOrigins = JSON.parse(process.env.ALLOWED_ORIGINS ?? "[]");
+
 const server = new ApolloServer({
   typeDefs,
   resolvers,
   cors: {
-    origin: "*", 
+    origin: allowedOrigins,
     methods: "GET,POST",
     allowedHeaders: ["Content-Type"],
   },

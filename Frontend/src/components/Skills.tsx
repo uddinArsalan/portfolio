@@ -26,16 +26,51 @@ import PnpmLogo from "../assets/skills svgs/PnpmLogo";
 import ZustandLogo from "../assets/skills svgs/ZustandLogo";
 import TanstackQueryLogo from "../assets/skills svgs/TanstackQueryLogo";
 import SWRLogo from "../assets/skills svgs/SWRLogo";
+import DockerLogo from "../assets/skills svgs/DockerLogo";
+import RabbitMQLogo from "../assets/skills svgs/RabbitMQLogo";
+import CloudflareLogo from "../assets/skills svgs/CloudflareLogo";
 
 const skillsData = [
   {
     category: "Languages",
     skills: [
+      { name: "Golang", icon: GoLogo },
       { name: "JavaScript (ES6+)", icon: JavascriptLogo },
       { name: "TypeScript", icon: TypescriptLogo },
       { name: "Java", icon: JavaLogo },
-      { name: "Golang", icon: GoLogo },
       { name: "Python", icon: PythonLogo },
+    ],
+  },
+  {
+    category: "Backend",
+    skills: [
+      { name: "Go", icon: GoLogo },
+      { name: "Node.js", icon: NodejsLogo },
+      { name: "Express.js", icon: ExpressLogo },
+      { name: "GraphQL", icon: GraphQLLogo },
+      { name: "Prisma", icon: PrismaLogo },
+    ],
+  },
+  {
+    category: "Infrastructure & Tools",
+    skills: [
+      { name: "Docker", icon: DockerLogo },
+      { name: "RabbitMQ", icon: RabbitMQLogo },
+      { name: "Redis", icon: RedisLogo },
+      { name: "Cloudflare", icon: CloudflareLogo },
+      { name: "Git", icon: GitLogo },
+      { name: "npm", icon: NpmLogo },
+      { name: "pnpm", icon: PnpmLogo },
+    ],
+  },
+  {
+    category: "Databases",
+    skills: [
+      { name: "PostgreSQL", icon: PostgresSQLLogo },
+      { name: "MongoDB", icon: MongodbLogo },
+      { name: "MySQL", icon: MySQLLogo },
+      { name: "Firebase", icon: FirebaseLogo },
+      { name: "Supabase", icon: SupabaseLogo },
     ],
   },
   {
@@ -53,37 +88,8 @@ const skillsData = [
       { name: "Bootstrap", icon: BootStrapLogo },
     ],
   },
-  {
-    category: "Backend",
-    skills: [
-      { name: "Node.js", icon: NodejsLogo },
-      { name: "Express.js", icon: ExpressLogo },
-      { name: "Go", icon: GoLogo },
-      { name: "GraphQL", icon: GraphQLLogo },
-      { name: "Prisma", icon: PrismaLogo },
-    ],
-  },
-  {
-    category: "Databases",
-    skills: [
-      { name: "Redis", icon: RedisLogo },
-      { name: "MongoDB", icon: MongodbLogo },
-      { name: "PostgreSQL", icon: PostgresSQLLogo },
-      { name: "MySQL", icon: MySQLLogo },
-      { name: "Firebase", icon: FirebaseLogo },
-      { name: "Supabase", icon: SupabaseLogo },
-    ],
-  },
-  {
-    category: "Tools & Others",
-    skills: [
-      { name: "Git", icon: GitLogo },
-      { name: "npm", icon: NpmLogo },
-      { name: "pnpm", icon: PnpmLogo },
-    ],
-  },
 ];
-
+ 
 const Skills = () => {
   return (
     <section className="bg-neutral-900 py-16 px-6 md:px-8" id="skills">
@@ -121,5 +127,5 @@ const Skills = () => {
     </section>
   );
 };
-
+ 
 export default Skills;

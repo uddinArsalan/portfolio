@@ -22,7 +22,7 @@ const Sidebar: React.FC<SidebarProps> = ({ showSidebar, setShowSidebar }) => {
     }
   }, [isDesktopOrLaptop, setShowSidebar]);
 
-  const sidebarItems = ["About", "Projects", "Blogs", "Skills", "Contact"];
+  const sidebarItems = ["About", "Projects", "Skills", "Contact"];
 
   const handleLinkClick = () => {
     if (!isDesktopOrLaptop) {

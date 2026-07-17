@@ -22,7 +22,7 @@ function NextjsLogo({ width = "", height = "", className = "" }) {
           gradientTransform="scale(.71111)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#fff"></stop>
+          <stop stopColor="#fff"></stop>
           <stop offset="1" stopColor="#fff" stopOpacity="0"></stop>
         </linearGradient>
         <linearGradient
